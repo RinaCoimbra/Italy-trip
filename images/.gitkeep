@@ -1,0 +1,67 @@
+# Drop trip photos here.
+#
+# Naming convention: DD-place-detail.jpg
+# Example: 02-sirmione-castle.jpg
+#
+# The HTML expects these specific filenames — see the data-image="..." attributes
+# in italy-trip-family.html. As you save each one, it'll replace the
+# Wikipedia-fallback image automatically the next time the page loads.
+#
+# Day 2 (Fri Jun 26 — Desenzano)
+#   02-sirmione-castle.jpg     hero, aerial of Castello Scaligero
+#   02-jamaica-beach.jpg       warm rock shelves at the tip
+#   02-parco-giraffes.jpg      Parco Natura Viva
+#   02-desenzano-sunset.jpg    Desenzano lakefront
+#
+# Day 3 (Sat Jun 27 — → Castelrotto)
+#   03-rabbit-island.jpg       hero, Isola di San Biagio aerial
+#   03-rabbits.jpg             rabbits on the island
+#   03-castelrotto.jpg         village + bell tower
+#   03-sciliar.jpg             Sciliar/Schlern peak
+#
+# Day 4 (Sun Jun 28 — Castelrotto)
+#   04-sassolungo.jpg          hero, Sassolungo from the meadow
+#   04-alpacas.jpg             AlpenHotel Panorama alpacas
+#   04-lago-di-fie.jpg         Lago di Fiè / Völser Weiher
+#   04-cows.jpg                cows on Alpe di Siusi
+#
+# Day 5 (Mon Jun 29 — → Merano)
+#   05-carezza.jpg             hero, Karersee + Latemar reflection
+#   05-latemar.jpg             Latemar peaks
+#   05-trauttmansdorff.jpg     Trauttmansdorff Castle Gardens
+#   05-merano-arcades.jpg      Merano old town arcades
+#
+# Day 6 (Tue Jun 30 — Bike day)
+#   06-etsch-bike.jpg          hero, bike path through orchards
+#   06-pfefferlechner.jpg      Pfefferlechner Keller courtyard
+#   06-orchards.jpg            South Tyrol apple orchards close-up
+#   06-lana.jpg                Lana village
+#
+# Day 7 (Wed Jul 1 — Merano 2000)
+#   07-cable-car.jpg           hero, Funivia Merano 2000 cabin
+#   07-alpin-bob.jpg           alpine coaster
+#   07-tappeiner.jpg           Tappeiner Promenade
+#   07-merano-panorama.jpg     Merano from above
+#
+# Day 8 (Thu Jul 2 — Therme + Tirolo)
+#   08-castel-tirolo.jpg       hero, Castel Tirolo above the valley
+#   08-therme.jpg              Therme Meran outdoor pools
+#   08-falknerpromenade.jpg    Falknerpromenade through orchards
+#   08-tirolo.jpg              Tirolo village
+#
+# Day 9 (Fri Jul 3 — → Riva)
+#   09-riva.jpg                hero, Riva + Monte Brione cliffs
+#   09-cascate-varone.jpg      Cascate del Varone gorge
+#   09-bastione.jpg            Bastione di Riva sunset
+#   09-friday-market.jpg       Merano Friday market
+#
+# Day 10 (Sat Jul 4 — Riva)
+#   10-lago-tenno.jpg          hero, Lago di Tenno emerald lake
+#   10-bike-torbole.jpg        Riva → Torbole bike path
+#   10-canale-tenno.jpg        Canale di Tenno medieval village
+#   10-torbole.jpg             Torbole windsurfers
+#
+# Day 11 (Sun Jul 5 — → MXP)
+#   11-sabbioni.jpg            hero, Spiaggia Sabbioni Riva
+#   11-limone.jpg              Limone sul Garda lemon groves
+#   11-garda-morning.jpg       Lake Garda morning
