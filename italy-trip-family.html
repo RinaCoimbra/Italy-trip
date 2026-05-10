@@ -53,8 +53,6 @@
 
   a { color: inherit; }
 
-  /* ---------- shared helpers ---------- */
-
   .container {
     max-width: 1180px;
     margin: 0 auto;
@@ -86,8 +84,6 @@
     background: var(--rust);
     opacity: 0.4;
   }
-
-  /* ---------- HERO ---------- */
 
   .hero {
     min-height: 100vh;
@@ -181,8 +177,6 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ---------- SECTION : ROUTE ---------- */
-
   .section {
     padding: 110px 0;
     border-top: 1px solid var(--line);
@@ -267,8 +261,6 @@
     font-size: 13px;
     margin-bottom: 2px;
   }
-
-  /* ---------- SECTION : DAYS ---------- */
 
   .days { padding: 110px 0 130px; }
 
@@ -486,8 +478,6 @@
     font-weight: bold;
   }
 
-  /* ---------- SECTION : GOOD TO KNOW ---------- */
-
   .know {
     background: var(--ink);
     color: var(--paper);
@@ -544,8 +534,6 @@
     color: var(--paper);
   }
 
-  /* ---------- FOOTER ---------- */
-
   .footer {
     padding: 60px 0 80px;
     text-align: center;
@@ -566,7 +554,6 @@
     margin-top: 14px;
   }
 
-  /* ---------- REVEAL ---------- */
   .reveal {
     opacity: 0;
     transform: translateY(20px);
@@ -581,7 +568,6 @@
     .hero-tagline, .hero-title, .hero-sub { animation: none; opacity: 1; transform: none; }
   }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px) {
     .container { padding: 0 36px; }
     .hero { padding: 24px 32px 32px; }
@@ -634,7 +620,6 @@
 </head>
 <body>
 
-<!-- ========== HERO ========== -->
 <header class="hero">
   <div class="hero-meta">
     <span>For Raul · Trip Brief</span>
@@ -666,7 +651,6 @@
 </header>
 
 
-<!-- ========== SECTION II : ROUTE ========== -->
 <section class="section warm reveal">
   <div class="container">
     <div class="section-tag">Section II · Route Overview</div>
@@ -713,14 +697,12 @@
 </section>
 
 
-<!-- ========== SECTION III : DAY BY DAY ========== -->
 <section class="days">
   <div class="container">
     <div class="section-tag reveal">Section III · Day by Day</div>
     <h2 class="section-heading reveal">What's planned <em>each day.</em></h2>
 
 
-    <!-- ===== DAY 1 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 01</div>
@@ -754,7 +736,6 @@
     </article>
 
 
-    <!-- ===== DAY 2 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 02</div>
@@ -766,12 +747,12 @@
         <p class="day-intro">The earliest ferry to Sirmione finds the medieval lanes still cool and empty. Afternoon is for Desenzano's own swimming spots.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sirmione%20Castello%20Scaligero%20Aerial%20View.jpg?width=1600"
-               alt="Aerial view of Castello Scaligero, Sirmione, on its peninsula in Lake Garda"
+          <img alt="Castello Scaligero, Sirmione, on its peninsula in Lake Garda"
                loading="lazy"
+               data-wiki="Sirmione"
                data-place="Sirmione · Castello Scaligero" />
         </figure>
-        <div class="photo-caption">Castello Scaligero, Sirmione · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Sirmione">Sirmione · via Wikipedia</div>
 
         <div class="blocks">
           <div class="block"><div class="time">7:30</div><div class="body">Ferry Desenzano → Sirmione (8:30 if the early one isn't running).</div></div>
@@ -794,7 +775,6 @@
     </article>
 
 
-    <!-- ===== DAY 3 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 03</div>
@@ -806,12 +786,12 @@
         <p class="day-intro">A wild rabbit colony on a tiny island reached by walking knee-deep across a sand bar — the kind of detail toddlers remember for years.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Isola%20di%20San%20Biagio%20Lago%20di%20Garda.jpg?width=1600"
-               alt="Isola di San Biagio (Rabbit Island) on Lake Garda with cypress trees and shallow water"
+          <img alt="Isola di San Biagio (Rabbit Island) on Lake Garda with cypress trees and shallow water"
                loading="lazy"
+               data-wiki="Isola_di_San_Biagio"
                data-place="Isola di San Biagio · Lake Garda" />
         </figure>
-        <div class="photo-caption">Isola di San Biagio (Isola dei Conigli) · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Isola_di_San_Biagio">Isola di San Biagio (Isola dei Conigli) · via Wikipedia</div>
 
         <div class="travel-row mono">
           Desenzano <span class="arrow">→</span> Manerba <span class="dur">~30–40m bus</span>
@@ -839,7 +819,6 @@
     </article>
 
 
-    <!-- ===== DAY 4 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 04</div>
@@ -851,12 +830,12 @@
         <p class="day-intro">A travel day timed around naps, with a long lunch in Bolzano's open-air market in the middle.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bolzano%20Piazza%20delle%20Erbe.jpg?width=1600"
-               alt="Bolzano's Piazza delle Erbe with open-air market stalls of fruit and vegetables"
+          <img alt="Bolzano's Piazza delle Erbe with open-air market stalls of fruit and vegetables"
                loading="lazy"
+               data-wiki="Bolzano"
                data-place="Bolzano · Piazza delle Erbe" />
         </figure>
-        <div class="photo-caption">Piazza delle Erbe, Bolzano · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Bolzano">Bolzano · via Wikipedia</div>
 
         <div class="travel-row mono">
           Desenzano <span class="arrow">→</span> Verona <span class="dur">~30m</span>
@@ -882,7 +861,6 @@
     </article>
 
 
-    <!-- ===== DAY 5 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 05</div>
@@ -894,12 +872,12 @@
         <p class="day-intro">First gondola up to Europe's largest high-alpine meadow — alpacas, cows, bunnies, and the Sassolungo overhead.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alpe%20di%20Siusi%20panorama.jpg?width=1600"
-               alt="Alpe di Siusi (Seiser Alm) summer meadow under the Sassolungo and Schlern peaks"
+          <img alt="Alpe di Siusi (Seiser Alm) summer meadow under the Sassolungo and Schlern peaks"
                loading="lazy"
+               data-wiki="Alpe_di_Siusi"
                data-place="Alpe di Siusi · Seiser Alm" />
         </figure>
-        <div class="photo-caption">Seiser Alm under the Sassolungo · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Alpe_di_Siusi">Alpe di Siusi · via Wikipedia</div>
 
         <div class="blocks">
           <div class="block"><div class="time">8:30</div><div class="body">First gondola up from Seis am Schlern. Empty meadows, cool air.</div></div>
@@ -923,7 +901,6 @@
     </article>
 
 
-    <!-- ===== DAY 6 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 06</div>
@@ -935,12 +912,12 @@
         <p class="day-intro">A morning detour to the most photographed lake in the Dolomites, then settle in Merano for four nights.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lago%20di%20Carezza%20Karersee.jpg?width=1600"
-               alt="Lago di Carezza (Karersee) emerald-green lake reflecting the Latemar peaks"
+          <img alt="Lago di Carezza (Karersee) emerald-green lake reflecting the Latemar peaks"
                loading="lazy"
+               data-wiki="Karersee"
                data-place="Lago di Carezza · Karersee" />
         </figure>
-        <div class="photo-caption">Lago di Carezza / Karersee, with the Latemar reflected · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Karersee">Lago di Carezza · via Wikipedia</div>
 
         <div class="travel-row mono">
           Castelrotto <span class="arrow">→</span> Bolzano <span class="dur">~50m</span>
@@ -969,7 +946,6 @@
     </article>
 
 
-    <!-- ===== DAY 7 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 07</div>
@@ -981,12 +957,12 @@
         <p class="day-intro">A morning hillside walk through working orchards, lunch at a farm-tavern, evening promenade above town.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castel%20Tirolo%20panorama.jpg?width=1600"
-               alt="Castel Tirolo above Merano with apple orchards on the surrounding hillside"
+          <img alt="Castel Tirolo above Merano with apple orchards on the surrounding hillside"
                loading="lazy"
+               data-wiki="Tirol_Castle"
                data-place="Tirolo · Falknerpromenade" />
         </figure>
-        <div class="photo-caption">Tirolo, above Merano · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Tirol_Castle">Castel Tirolo, above Merano · via Wikipedia</div>
 
         <div class="blocks">
           <div class="block"><div class="time">9:00</div><div class="body">Bus 222 to Tirolo or Schenna (15–20 min, hillside villages above Merano).</div></div>
@@ -1009,7 +985,6 @@
     </article>
 
 
-    <!-- ===== DAY 8 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 08</div>
@@ -1021,12 +996,12 @@
         <p class="day-intro">Fifty thousand square meters of thermal park in the middle of town — eleven outdoor pools, a Bio Nature pool, a kids' pool with sprinklers and a mini slide.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Terme%20Merano.jpg?width=1600"
-               alt="Terme Merano outdoor thermal pools surrounded by gardens"
+          <img alt="Merano old town along the Passer river"
                loading="lazy"
-               data-place="Terme Merano" />
+               data-wiki="Merano"
+               data-place="Merano · Terme" />
         </figure>
-        <div class="photo-caption">Terme Merano · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Merano">Merano · via Wikipedia</div>
 
         <div class="blocks">
           <div class="block"><div class="time">9:00</div><div class="body">At Terme Merano for opening. 50,000 m² thermal park in the center of town: 11 outdoor pools, Bio Nature Pool (sun-heated, lily-pond style), Kneipp barefoot circulation circuit, kid pool with mini slide and shaded playground, steam grotto.</div></div>
@@ -1049,7 +1024,6 @@
     </article>
 
 
-    <!-- ===== DAY 9 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 09</div>
@@ -1061,12 +1035,12 @@
         <p class="day-intro">Buy lunch at Merano's biggest weekly market, ride a glass cable car straight up to Merano 2000, and eat it in a meadow.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seilbahn%20Meran%202000.jpg?width=1600"
-               alt="Merano 2000 cable car climbing above Merano"
+          <img alt="Merano 2000 cable car climbing above Merano"
                loading="lazy"
+               data-wiki="Meran_2000"
                data-place="Merano 2000 · Cable car" />
         </figure>
-        <div class="photo-caption">Merano 2000 cable car · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Meran_2000">Merano 2000 · via Wikipedia</div>
 
         <div class="blocks">
           <div class="block"><div class="time">7:30</div><div class="body">Walk to the Friday market on Piazza Prader / Via Mainardo.</div></div>
@@ -1093,7 +1067,6 @@
     </article>
 
 
-    <!-- ===== DAY 10 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 10</div>
@@ -1105,12 +1078,12 @@
         <p class="day-intro">One last Merano market for the road, then south to the dramatic top of Lake Garda.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Riva%20del%20Garda%20panorama.jpg?width=1600"
-               alt="Riva del Garda lakefront with the dramatic cliffs of Monte Brione"
+          <img alt="Riva del Garda lakefront with the dramatic cliffs of Monte Brione"
                loading="lazy"
+               data-wiki="Riva_del_Garda"
                data-place="Riva del Garda" />
         </figure>
-        <div class="photo-caption">Riva del Garda lakefront · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Riva_del_Garda">Riva del Garda · via Wikipedia</div>
 
         <div class="travel-row mono">
           Merano <span class="arrow">→</span> Bolzano <span class="dur">~40m</span>
@@ -1143,7 +1116,6 @@
     </article>
 
 
-    <!-- ===== DAY 11 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 11</div>
@@ -1155,12 +1127,12 @@
         <p class="day-intro">One last lakeside breakfast, one last swim, and three trains home to the airport hotel.</p>
 
         <figure class="photo">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Limone%20sul%20Garda.jpg?width=1600"
-               alt="Limone sul Garda with lemon groves and Lake Garda"
+          <img alt="Limone sul Garda with lemon groves and Lake Garda"
                loading="lazy"
+               data-wiki="Limone_sul_Garda"
                data-place="Limone sul Garda" />
         </figure>
-        <div class="photo-caption">Limone sul Garda, lemon groves on the opposite shore · Wikimedia Commons</div>
+        <div class="photo-caption" data-credit-for="Limone_sul_Garda">Limone sul Garda · via Wikipedia</div>
 
         <div class="travel-row mono">
           Riva <span class="arrow">→</span> Rovereto <span class="dur">~50m bus</span>
@@ -1186,7 +1158,6 @@
     </article>
 
 
-    <!-- ===== DAY 12 ===== -->
     <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 12</div>
@@ -1210,7 +1181,6 @@
 </section>
 
 
-<!-- ========== SECTION IV : GOOD TO KNOW ========== -->
 <section class="know reveal">
   <div class="container">
     <div class="section-tag">Section IV · Good to know</div>
@@ -1256,7 +1226,6 @@
 </section>
 
 
-<!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="container">
     <div class="mark">~ Italia ~</div>
@@ -1266,7 +1235,6 @@
 
 
 <script>
-  // Reveal-on-scroll
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -1277,17 +1245,46 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Graceful image fallback — replace broken images with a typographic placeholder
-  document.querySelectorAll('.photo img').forEach(img => {
-    img.addEventListener('error', () => {
-      const place = img.dataset.place || 'Italia';
-      const fig = img.closest('.photo');
-      img.remove();
-      const fb = document.createElement('div');
-      fb.className = 'photo-fallback';
-      fb.textContent = place;
-      fig.appendChild(fb);
-    }, { once: true });
+  function showFallback(img) {
+    const place = img.dataset.place || 'Italia';
+    const fig = img.closest('.photo');
+    if (!fig || fig.querySelector('.photo-fallback')) return;
+    img.remove();
+    const fb = document.createElement('div');
+    fb.className = 'photo-fallback';
+    fb.textContent = place;
+    fig.appendChild(fb);
+  }
+
+  async function loadWikiImage(img) {
+    const slug = img.dataset.wiki;
+    if (!slug) { showFallback(img); return; }
+    try {
+      const r = await fetch(
+        'https://en.wikipedia.org/api/rest_v1/page/summary/' + slug,
+        { headers: { 'Accept': 'application/json' } }
+      );
+      if (!r.ok) throw new Error('http ' + r.status);
+      const d = await r.json();
+      const src = (d.originalimage && d.originalimage.source)
+               || (d.thumbnail && d.thumbnail.source);
+      if (!src) throw new Error('no image');
+      img.addEventListener('error', () => showFallback(img), { once: true });
+      img.src = src;
+      const cap = document.querySelector('[data-credit-for="' + slug + '"]');
+      if (cap && d.content_urls && d.content_urls.desktop) {
+        cap.innerHTML = cap.textContent.trim() +
+          ' · <a href="' + d.content_urls.desktop.page +
+          '" style="color:inherit;text-decoration:underline">article</a>';
+      }
+    } catch (e) {
+      showFallback(img);
+    }
+  }
+
+  document.querySelectorAll('.photo img[data-wiki]').forEach(loadWikiImage);
+  document.querySelectorAll('.photo img:not([data-wiki])').forEach(img => {
+    img.addEventListener('error', () => showFallback(img), { once: true });
   });
 </script>
 
