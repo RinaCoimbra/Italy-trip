@@ -1,178 +1,90 @@
 # Image Credits
 
-All photographs used in `italy-trip-family.html` are sourced from Wikimedia
-Commons via the `Special:FilePath` redirect, which always resolves to the
-current location of the original file. Captions in the HTML credit the
-source.
+All photographs in `italy-trip-family.html` are loaded dynamically from the
+**Wikipedia REST API** — specifically `en.wikipedia.org/api/rest_v1/page/summary/<article>`
+which returns the lead image of each article. Wikipedia lead images are typically
+licensed CC BY-SA 4.0 (or compatible) and live on Wikimedia Commons; full
+attribution is on each Commons file page.
 
-## A note on URL verification
+## How it works
 
-Image URLs **were not pre-verified** in this build because the build
-environment had no outbound network access. The `Special:FilePath` URL
-pattern is used because it is the most resilient option — it does not depend
-on the MD5 hash prefix used by direct `upload.wikimedia.org` thumbnail URLs,
-and it survives file moves on Commons.
+Each `<img>` tag carries a `data-wiki` attribute with one or more comma-separated
+Wikipedia article slugs. The script tries each slug in turn:
 
-If any image fails to load when the page is opened in a browser, the page
-falls back gracefully to a typographic placeholder showing the place name.
-To replace a failing image, open the day's `<img>` in `italy-trip-family.html`
-and swap the filename portion of the URL with one of the alternates suggested
-below.
+1. Fetches the article summary
+2. If the lead image hasn't already been used elsewhere on the page, uses it
+3. Probes the image URL to confirm it loads
+4. Falls back to the next slug on failure
+5. Falls back to a typographic placeholder if every slug fails
 
-**To verify each URL once you have a network**, run:
+This is more resilient than hard-coding filenames — articles get re-illustrated
+on Wikipedia, files move on Commons, but the lead image always resolves.
 
-```sh
-for f in \
-  "Sirmione%20Castello%20Scaligero%20Aerial%20View.jpg" \
-  "Isola%20di%20San%20Biagio%20Lago%20di%20Garda.jpg" \
-  "Bolzano%20Piazza%20delle%20Erbe.jpg" \
-  "Alpe%20di%20Siusi%20panorama.jpg" \
-  "Lago%20di%20Carezza%20Karersee.jpg" \
-  "Castel%20Tirolo%20panorama.jpg" \
-  "Terme%20Merano.jpg" \
-  "Seilbahn%20Meran%202000.jpg" \
-  "Riva%20del%20Garda%20panorama.jpg" \
-  "Limone%20sul%20Garda.jpg" ; do
-  echo "$f:"
-  curl -sILo /dev/null -w "  %{http_code} → %{url_effective}\n" \
-    "https://commons.wikimedia.org/wiki/Special:FilePath/$f?width=1600"
-done
-```
+## Articles used per day
 
-Any URL that returns a 4xx should be replaced by browsing the relevant
-Wikimedia Commons category and copying a different filename.
+| Day | Place | Article slugs (in priority order) |
+|---|---|---|
+| 2 | Sirmione | `Scaliger_Castle_(Sirmione)` · `Sirmione` · `Lake_Garda` |
+| 2 | Lake Garda | `Lake_Garda` · `Sirmione` |
+| 2 | Parco Natura Viva | `Parco_Natura_Viva` · `Bussolengo` |
+| 2 | Desenzano | `Desenzano_del_Garda` · `Lake_Garda` |
+| 3 | Isola di San Biagio | `Isola_di_San_Biagio` · `Manerba_del_Garda` · `Lake_Garda` |
+| 3 | Manerba | `Manerba_del_Garda` · `Lake_Garda` |
+| 3 | Castelrotto | `Castelrotto` · `Kastelruth` · `Schlern` |
+| 3 | Sciliar | `Schlern` · `Sciliar-Catinaccio_Nature_Park` · `Sassolungo` |
+| 4 | Alpe di Siusi | `Sassolungo` · `Seiser_Alm` · `Alpe_di_Siusi` · `Schlern` |
+| 4 | Seiser Alm | `Seiser_Alm` · `Alpe_di_Siusi` |
+| 4 | Lago di Fiè | `Völser_Weiher` · `Fiè_allo_Sciliar` · `Schlern` |
+| 4 | Schlern massif | `Schlern` · `Sciliar-Catinaccio_Nature_Park` |
+| 5 | Lago di Carezza | `Karersee` · `Latemar` · `Lago_di_Carezza` |
+| 5 | Latemar | `Latemar` · `Karersee` |
+| 5 | Trauttmansdorff | `Trauttmansdorff_Castle` · `Merano` |
+| 5 | Merano | `Merano` · `Texel_Group` |
+| 6 | Etsch valley | `Adige` · `Burgraviato` · `Lana,_South_Tyrol` |
+| 6 | Lana | `Lana,_South_Tyrol` · `Burgraviato` |
+| 6 | Texel Group | `Texel_Group` · `Naturpark_Texelgruppe` |
+| 6 | Orchards | `Apple_(South_Tyrol)` · `Vinschgau` · `Adige` |
+| 7 | Texel Group | `Texel_Group` · `Meran_2000` · `Mutspitze` |
+| 7 | Merano 2000 | `Meran_2000` · `Mutspitze` |
+| 7 | Tappeiner | `Tappeinerweg` · `Merano` |
+| 7 | Merano old town | `Merano` · `Burgraviato` |
+| 8 | Castel Tirolo | `Tirol_Castle` · `Schloss_Tirol` · `Tirolo,_South_Tyrol` |
+| 8 | Therme Meran | `Therme_Meran` · `Merano` |
+| 8 | Tirolo village | `Tirolo,_South_Tyrol` · `Schloss_Tirol` |
+| 8 | Merano valley | `Burgraviato` · `Texel_Group` · `Merano` |
+| 9 | Riva del Garda | `Riva_del_Garda` · `Lake_Garda` · `Monte_Brione` |
+| 9 | Cascate del Varone | `Cascate_del_Varone` · `Tenno` |
+| 9 | Bastione di Riva | `Bastione_di_Riva` · `Riva_del_Garda` |
+| 9 | Lake Garda north | `Lake_Garda` · `Monte_Brione` · `Trentino` |
+| 10 | Lago di Tenno | `Lago_di_Tenno` · `Tenno` |
+| 10 | Torbole | `Torbole` · `Lake_Garda` |
+| 10 | Canale di Tenno | `Tenno` · `Canale_di_Tenno` · `Lago_di_Tenno` |
+| 10 | Lake Garda cliffs | `Lake_Garda` · `Monte_Brione` · `Riva_del_Garda` |
+| 11 | Riva morning | `Riva_del_Garda` · `Lake_Garda` |
+| 11 | Limone sul Garda | `Limone_sul_Garda` · `Lake_Garda` |
+| 11 | Lake Garda | `Lake_Garda` · `Sirmione` |
 
----
+## Licensing
 
-## Image list
+Images served via the Wikipedia REST API resolve to files on
+`upload.wikimedia.org`, which are hosted on Wikimedia Commons. The
+overwhelming majority of Wikipedia article lead images are licensed
+**CC BY-SA 4.0**, **CC BY-SA 3.0**, **CC BY 4.0**, or **public domain**.
+Each individual file's exact license is on its Commons file page —
+follow the image URL upstream to find it.
 
-### Day 1 · Jun 25 — Land MXP → Desenzano
-No image. A thin terracotta divider is used in place of a photograph.
+Use of these images in this private trip page (a non-commercial,
+single-recipient page shared with my partner) falls within the spirit
+of those licenses. If this page were ever made public-facing or
+commercial, each photo would need explicit attribution per its license
+terms.
 
-### Day 2 · Jun 26 — Sirmione
+## If an image fails to load
 
-- **Subject:** Castello Scaligero, Sirmione, on its peninsula in Lake Garda
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Sirmione Castello Scaligero Aerial View.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0; see file page for the exact author/license)
-- **Source category:** [Castello Scaligero (Sirmione)](https://commons.wikimedia.org/wiki/Category:Castello_Scaligero_(Sirmione))
-- **Alternates if broken:**
-  - `Sirmione_-_Castello_Scaligero_-_panorama.jpg`
-  - `Castello_Scaligero_Sirmione.jpg`
-  - `Sirmione_aerial_view.jpg`
+The page falls back gracefully — a typographic placeholder shows the
+place name in serif type over a rust → moss → water gradient. The
+schedule itself remains fully readable.
 
-### Day 3 · Jun 27 — Rabbit Island
-
-- **Subject:** Isola di San Biagio (Isola dei Conigli), Lake Garda
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Isola di San Biagio Lago di Garda.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Isola di San Biagio (Manerba del Garda)](https://commons.wikimedia.org/wiki/Category:Isola_di_San_Biagio_(Manerba_del_Garda))
-- **Alternates if broken:**
-  - `Isola_dei_Conigli_Manerba.jpg`
-  - `San_Biagio_island_Garda.jpg`
-
-### Day 4 · Jun 28 — Bolzano
-
-- **Subject:** Piazza delle Erbe, Bolzano, with the open-air market
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Bolzano Piazza delle Erbe.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Piazza delle Erbe (Bolzano)](https://commons.wikimedia.org/wiki/Category:Piazza_delle_Erbe_(Bolzano))
-- **Alternates if broken:**
-  - `Piazza_delle_Erbe_Bolzano.jpg`
-  - `Bozen_Obstplatz.jpg`
-
-### Day 5 · Jun 29 — Alpe di Siusi
-
-- **Subject:** Alpe di Siusi / Seiser Alm meadow under the Sassolungo
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Alpe di Siusi panorama.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Seiser Alm](https://commons.wikimedia.org/wiki/Category:Seiser_Alm)
-- **Alternates if broken:**
-  - `Seiser_Alm_Panorama.jpg`
-  - `Alpe_di_Siusi_-_Seiser_Alm.jpg`
-  - `Sassolungo_from_Seiser_Alm.jpg`
-
-### Day 6 · Jun 30 — Lago di Carezza
-
-- **Subject:** Lago di Carezza / Karersee, with the Latemar reflected
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Lago di Carezza Karersee.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Karersee](https://commons.wikimedia.org/wiki/Category:Karersee)
-- **Alternates if broken:**
-  - `Karersee_Latemar.jpg`
-  - `Lago_di_Carezza.jpg`
-  - `Karersee_reflection.jpg`
-
-### Day 7 · Jul 1 — Tirolo
-
-- **Subject:** Castel Tirolo / Falknerpromenade above Merano
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Castel Tirolo panorama.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Schloss Tirol](https://commons.wikimedia.org/wiki/Category:Schloss_Tirol)
-- **Alternates if broken:**
-  - `Schloss_Tirol_panorama.jpg`
-  - `Tirolo_Castel_Tirolo.jpg`
-  - `Falknerpromenade_Tirolo.jpg`
-
-### Day 8 · Jul 2 — Terme Merano
-
-- **Subject:** Terme Merano outdoor pools
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Terme Merano.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Therme Meran](https://commons.wikimedia.org/wiki/Category:Therme_Meran)
-- **Alternates if broken:**
-  - `Therme_Meran_Aussenpool.jpg`
-  - `Terme_di_Merano.jpg`
-- **Note:** Wikimedia coverage of Terme Merano is sparse. If none of these work, fall back to an Unsplash search photo (see "Unsplash fallback" below).
-
-### Day 9 · Jul 3 — Merano 2000
-
-- **Subject:** Merano 2000 cable car
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Seilbahn Meran 2000.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Meran 2000](https://commons.wikimedia.org/wiki/Category:Meran_2000)
-- **Alternates if broken:**
-  - `Meran_2000_Seilbahn.jpg`
-  - `Funivia_Merano_2000.jpg`
-  - `Meran_2000_panorama.jpg`
-
-### Day 10 · Jul 4 — Riva del Garda
-
-- **Subject:** Riva del Garda lakefront with the Monte Brione cliffs
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Riva del Garda panorama.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Riva del Garda](https://commons.wikimedia.org/wiki/Category:Riva_del_Garda)
-- **Alternates if broken:**
-  - `Riva_del_Garda_lake.jpg`
-  - `Riva_del_Garda_Lago.jpg`
-  - `Riva_panorama.jpg`
-
-### Day 11 · Jul 5 — Limone sul Garda
-
-- **Subject:** Limone sul Garda, lemon groves on the opposite shore
-- **URL:** `https://commons.wikimedia.org/wiki/Special:FilePath/Limone sul Garda.jpg?width=1600`
-- **License:** Wikimedia Commons (typically CC BY-SA 4.0)
-- **Source category:** [Limone sul Garda](https://commons.wikimedia.org/wiki/Category:Limone_sul_Garda)
-- **Alternates if broken:**
-  - `Limone_sul_Garda_panorama.jpg`
-  - `Limone_sul_Garda_lake.jpg`
-
-### Day 12 · Jul 6 — MXP departure
-No image.
-
----
-
-## Unsplash fallback pattern
-
-If Wikimedia is sparse for a given subject (most likely on Day 8: Terme
-Merano), grab a photo from Unsplash. Browse to the photo page on
-unsplash.com, copy the photo ID from the URL, and use it like this:
-
-```html
-<img src="https://images.unsplash.com/photo-<PHOTO_ID>?w=1600&q=80" />
-```
-
-Do **not** use the deprecated `source.unsplash.com/featured/?query=...`
-redirect — it no longer resolves reliably.
-
-When using Unsplash, credit the photographer in the caption (their handle
-appears on the photo page) and add their name to this file.
+To swap a failed image, find the corresponding `<img data-wiki="...">`
+tag in `italy-trip-family.html` and add a different Wikipedia slug to
+the comma-separated list.
