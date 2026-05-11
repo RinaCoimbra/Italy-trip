@@ -32,7 +32,7 @@
     font-size: 19px;
     line-height: 1.55;
     letter-spacing: 0.005em;
-    overflow-x: hidden;
+    overflow-x: clip;
     position: relative;
   }
   body::after {
@@ -312,8 +312,8 @@
   .appendix details .appendix-body { padding: 14px 28px 22px; }
 
   /* === DAY NAVIGATION SIDEBAR === */
-  .days-layout { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
-  .day-nav-aside { padding-top: 8px; }
+  .days-layout { display: grid; grid-template-columns: 240px 1fr; gap: 56px; }
+  .day-nav-aside { padding-top: 8px; position: relative; }
   .day-nav-inner { position: sticky; top: 70px; max-height: calc(100vh - 100px); overflow-y: auto; padding-right: 8px; }
   .day-nav-inner::-webkit-scrollbar { width: 4px; }
   .day-nav-inner::-webkit-scrollbar-thumb { background: rgba(166,72,34,0.3); border-radius: 2px; }
