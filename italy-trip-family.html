@@ -311,6 +311,29 @@
   .appendix details[open] summary::before { content: '−'; }
   .appendix details .appendix-body { padding: 14px 28px 22px; }
 
+  /* === DAY NAVIGATION SIDEBAR === */
+  .days-layout { display: grid; grid-template-columns: 240px 1fr; gap: 56px; align-items: start; }
+  .day-nav-aside { padding-top: 8px; }
+  .day-nav-inner { position: sticky; top: 70px; max-height: calc(100vh - 100px); overflow-y: auto; padding-right: 8px; }
+  .day-nav-inner::-webkit-scrollbar { width: 4px; }
+  .day-nav-inner::-webkit-scrollbar-thumb { background: rgba(166,72,34,0.3); border-radius: 2px; }
+  .day-nav-title { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--rust); margin: 0 0 14px 12px; }
+  .day-nav-list { list-style: none; padding: 0; margin: 0; }
+  .dn-item { display: block; padding: 10px 12px 12px; border-left: 2px solid transparent; cursor: pointer; transition: background 0.2s, border-color 0.2s; }
+  .dn-item:hover { background: rgba(166, 72, 34, 0.04); }
+  .dn-item.active { border-left-color: var(--rust); background: rgba(166, 72, 34, 0.06); }
+  .dn-num { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.22em; color: var(--rust); display: block; margin-bottom: 2px; }
+  .dn-date { display: flex; align-items: baseline; gap: 6px; margin-bottom: 2px; }
+  .dn-month { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); }
+  .dn-day-num { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1; color: var(--ink); }
+  .dn-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--ink-soft); display: block; margin-bottom: 4px; }
+  .dn-brief { font-family: 'Cormorant Garamond', serif; font-size: 14px; line-height: 1.3; color: var(--ink); display: block; }
+  .dn-item.active .dn-day-num { color: var(--rust-deep); }
+  @media (max-width: 900px) {
+    .days-layout { grid-template-columns: 1fr; gap: 0; }
+    .day-nav-aside { display: none; }
+  }
+
   /* === DAY FLOW: scannable morning / lunch / afternoon / dinner grid === */
   .day-flow { margin: 28px 0 32px; border-top: 1px solid var(--line); }
   .flow-row { display: grid; grid-template-columns: 130px 1fr; gap: 28px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
@@ -532,16 +555,34 @@
     </ul>
     <p class="sched-note" style="margin-top:24px;">★ = Merano (the place we're considering moving to · 4 nights · daily-life days)</p>
   </div>
-</section>
 
-
-<section class="days">
-  <div class="container">
     <div class="section-tag reveal">Day by day</div>
     <h2 class="section-heading reveal" style="margin-bottom:24px;">A weekend, <em>every day.</em></h2>
     <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--ink-soft); margin-bottom:46px; max-width:680px;">What we'd do, where we'd eat, and what makes each day worth the morning wake-up with the girls.</p>
 
 
+    <div class="days-layout">
+      <aside class="day-nav-aside">
+        <div class="day-nav-inner">
+          <div class="day-nav-title">The 11 days</div>
+          <ul class="day-nav-list">
+            <li class="dn-item" data-day="day-01"><span class="dn-num">Day 01</span><div class="dn-date"><span class="dn-month">Jun</span><span class="dn-day-num">25</span></div><span class="dn-name">Thu · arrival</span><span class="dn-brief">Land MXP, two trains to Lake Garda</span></li>
+            <li class="dn-item" data-day="day-02"><span class="dn-num">Day 02</span><div class="dn-date"><span class="dn-month">Jun</span><span class="dn-day-num">26</span></div><span class="dn-name">Fri · Desenzano</span><span class="dn-brief">Sirmione + Parco Natura Viva</span></li>
+            <li class="dn-item" data-day="day-03"><span class="dn-num">Day 03</span><div class="dn-date"><span class="dn-month">Jun</span><span class="dn-day-num">27</span></div><span class="dn-name">Sat · → Castelrotto</span><span class="dn-brief">Rabbit island, then trains up to the Dolomites</span></li>
+            <li class="dn-item" data-day="day-04"><span class="dn-num">Day 04</span><div class="dn-date"><span class="dn-month">Jun</span><span class="dn-day-num">28</span></div><span class="dn-name">Sun · Castelrotto</span><span class="dn-brief">Alpe di Siusi + Lago di Fiè</span></li>
+            <li class="dn-item" data-day="day-05"><span class="dn-num">Day 05</span><div class="dn-date"><span class="dn-month">Jun</span><span class="dn-day-num">29</span></div><span class="dn-name">Mon · → Merano ★</span><span class="dn-brief">Carezza, then arrive at the Therme</span></li>
+            <li class="dn-item" data-day="day-06"><span class="dn-num">Day 06</span><div class="dn-date"><span class="dn-month">Jun</span><span class="dn-day-num">30</span></div><span class="dn-name">Tue · Merano</span><span class="dn-brief">Tirolo afternoon + soulful pizza</span></li>
+            <li class="dn-item" data-day="day-07"><span class="dn-num">Day 07</span><div class="dn-date"><span class="dn-month">Jul</span><span class="dn-day-num">01</span></div><span class="dn-name">Wed · Merano</span><span class="dn-brief">Cable car morning, gardens afternoon</span></li>
+            <li class="dn-item" data-day="day-08"><span class="dn-num">Day 08</span><div class="dn-date"><span class="dn-month">Jul</span><span class="dn-day-num">02</span></div><span class="dn-name">Thu · Merano</span><span class="dn-brief">Bike to Götzfried's farm in Lana</span></li>
+            <li class="dn-item" data-day="day-09"><span class="dn-num">Day 09</span><div class="dn-date"><span class="dn-month">Jul</span><span class="dn-day-num">03</span></div><span class="dn-name">Fri · → Riva</span><span class="dn-brief">Friday market, three trains to Garda</span></li>
+            <li class="dn-item" data-day="day-10"><span class="dn-num">Day 10</span><div class="dn-date"><span class="dn-month">Jul</span><span class="dn-day-num">04</span></div><span class="dn-name">Sat · Riva</span><span class="dn-brief">Bike to Torbole, Lago di Tenno, pizza</span></li>
+            <li class="dn-item" data-day="day-11"><span class="dn-num">Day 11</span><div class="dn-date"><span class="dn-month">Jul</span><span class="dn-day-num">05</span></div><span class="dn-name">Sun · → MXP</span><span class="dn-brief">Last lake swim, transit to airport</span></li>
+            <li class="dn-item" data-day="day-12"><span class="dn-num">Day 12</span><div class="dn-date"><span class="dn-month">Jul</span><span class="dn-day-num">06</span></div><span class="dn-name">Mon · departure</span><span class="dn-brief">Fly to Lisbon 05:50</span></li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="days-content">
     <details class="day-details" id="day-01" open>
   <summary>
     <span class="s-num">Day 01</span>
@@ -1951,6 +1992,9 @@
       </div>
     </article>
 </details>
+      </div>
+    </div>
+
 
   </div>
 </section>
@@ -2188,6 +2232,30 @@
     });
     body.appendChild(btn);
   });
+
+  // Day-nav sidebar: click to jump, scroll-spy to highlight current day
+  const dnItems = document.querySelectorAll('.dn-item');
+  dnItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const id = item.dataset.day;
+      const target = document.getElementById(id);
+      if (!target) return;
+      target.open = true;
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+  if (dnItems.length) {
+    const navObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          dnItems.forEach(i => i.classList.remove('active'));
+          const item = document.querySelector(`.dn-item[data-day="${entry.target.id}"]`);
+          if (item) item.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px', threshold: 0 });
+    document.querySelectorAll('details.day-details').forEach(d => navObs.observe(d));
+  }
 
   function showFallback(img) {
     const place = img.dataset.place || 'Italia';
