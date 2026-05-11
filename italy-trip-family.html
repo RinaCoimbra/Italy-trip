@@ -181,12 +181,225 @@
     .hero-tagline, .hero-title, .hero-sub { animation: none; opacity: 1; transform: none; }
   }
 
+  /* === NARRATIVE STORY === */
+  .narrative { background: var(--paper-warm); border: 1px solid var(--line); padding: 22px 26px; margin: 0 0 28px; position: relative; }
+  .narrative::before { content: 'The day, as a little story'; display: block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--rust); margin-bottom: 12px; }
+  .narrative p { font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 1.6; font-style: italic; color: var(--ink-soft); }
+  .narrative p + p { margin-top: 10px; }
+  .narrative b { font-weight: 600; font-style: normal; color: var(--ink); }
+
+  /* === MEALS BLOCK === */
+  .meals-block { background: rgba(184, 137, 63, 0.06); border-left: 3px solid var(--gold); padding: 8px 22px 18px; margin: 28px 0 0; }
+  .meals-block > .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); display: block; margin: 14px 0 4px; }
+  .meal { display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .meal:first-of-type { border-top: none; }
+  .meal .meal-tag { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; padding-top: 5px; }
+  .meal.breakfast .meal-tag { color: var(--gold); }
+  .meal.lunch .meal-tag { color: var(--rust); }
+  .meal.dinner .meal-tag { color: var(--moss-deep); }
+  .meal .meal-body { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.5; }
+  .meal .meal-body b { font-weight: 600; }
+  .meal .meal-body em { color: var(--ink-soft); }
+
+  /* === DIET CHIPS === */
+  .veg, .asian, .meat-ok, .market { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; padding: 2px 6px; margin-left: 4px; vertical-align: 1px; border-radius: 2px; font-weight: 500; }
+  .veg { background: rgba(74,93,58,0.18); color: var(--moss-deep); }
+  .asian { background: rgba(44, 84, 102, 0.18); color: var(--water); }
+  .meat-ok { background: rgba(166,72,34,0.12); color: var(--rust-deep); }
+  .market { background: rgba(184,137,63,0.18); color: var(--rust-deep); }
+
+  /* === SWAP / BACKUP === */
+  .swap { background: rgba(184, 137, 63, 0.08); border: 1px dashed rgba(184, 137, 63, 0.5); padding: 14px 20px; margin: 20px 0 6px; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--ink); }
+  .swap .label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+  .swap p + p { margin-top: 8px; }
+  .swap b { font-weight: 600; }
+
+  /* === PLACE LINK === */
+  a.place-link { color: inherit; text-decoration: none; border-bottom: 1px dotted var(--rust); transition: border-bottom-color 0.2s; padding-bottom: 0; }
+  a.place-link:hover { border-bottom-color: var(--ink); border-bottom-style: solid; }
+  a.place-link::after { content: '↗'; font-size: 0.65em; color: var(--rust); opacity: 0.8; margin-left: 2px; vertical-align: super; }
+
+  /* === HOURS BADGE === */
+  .hours { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: var(--ink-soft); display: inline-block; margin-left: 6px; padding: 1px 6px; background: rgba(26,26,24,0.06); border-radius: 2px; white-space: nowrap; }
+
+  /* === MAPS === */
+  .overview-map-section { padding: 90px 0; border-top: 1px solid var(--line); background: var(--paper); }
+  .overview-map { width: 100%; max-width: 980px; margin: 30px auto 0; aspect-ratio: 4 / 3; background: var(--paper-warm); border: 1px solid var(--line); padding: 24px; position: relative; }
+  .overview-map svg { width: 100%; height: 100%; display: block; }
+  .minimap { width: 100%; aspect-ratio: 21 / 9; background: var(--paper-warm); border: 1px solid var(--line); margin: 22px 0 28px; padding: 18px 22px 14px; position: relative; }
+  .minimap svg { width: 100%; height: 100%; display: block; }
+  .minimap .minimap-label { position: absolute; top: 10px; left: 18px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); }
+
+  /* === LIVE-HERE PANEL === */
+  .live-here { background: var(--moss-deep); color: var(--paper); padding: 100px 0; }
+  .live-here .section-tag { color: var(--paper); opacity: 0.85; }
+  .live-here .section-tag::after { background: rgba(244,237,224,0.4); }
+  .live-here .section-heading { color: var(--paper); }
+  .live-here .section-heading em { color: var(--gold); }
+  .live-here .lh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 56px; margin-top: 24px; }
+  .live-here .lh-block { border-top: 1px solid rgba(244,237,224,0.18); padding-top: 20px; }
+  .live-here .lh-block h3 { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 12px; }
+  .live-here .lh-block p { font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.6; color: rgba(244,237,224,0.9); }
+  .live-here .lh-block p + p { margin-top: 10px; }
+  .live-here .lh-block strong { color: var(--paper); font-weight: 500; }
+
+  /* === SCHEDULE NOTE === */
+  .sched-note { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); margin: 6px 0 16px; opacity: 0.75; }
+
+  /* === CAROUSEL === */
+  .carousel { padding: 60px 0 30px; background: var(--paper); border-top: 1px solid var(--line); }
+  .carousel-track { display: flex; gap: 16px; padding: 0 56px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scroll-padding: 0 56px; }
+  .carousel-track::-webkit-scrollbar { height: 6px; }
+  .carousel-track::-webkit-scrollbar-thumb { background: rgba(166,72,34,0.3); border-radius: 3px; }
+  .carousel-card { flex: 0 0 360px; aspect-ratio: 4 / 5; position: relative; scroll-snap-align: start; background: var(--ink-soft); overflow: hidden; border: 1px solid var(--line); }
+  .carousel-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .carousel-card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(26,26,24,0.7) 100%); pointer-events: none; }
+  .carousel-cap { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 20px 18px; color: var(--paper); z-index: 2; }
+  .carousel-cap .num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; opacity: 0.85; color: var(--gold); display: block; margin-bottom: 4px; }
+  .carousel-cap .title { font-family: 'DM Serif Display', serif; font-size: 22px; line-height: 1.1; }
+  .carousel-cap .sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; opacity: 0.85; margin-top: 4px; }
+  .carousel-hint { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); padding: 0 56px 18px; }
+
+  /* === GLANCE STRIP === */
+  .glance { padding: 90px 0; border-top: 1px solid var(--line); }
+  .glance-list { list-style: none; padding: 0; margin: 32px 0 0; }
+  .glance-row { display: grid; grid-template-columns: 80px 90px 60px 1fr; gap: 22px; padding: 18px 12px; border-bottom: 1px solid var(--line); align-items: baseline; transition: background 0.2s; cursor: pointer; }
+  .glance-row:first-child { border-top: 1px solid var(--line); }
+  .glance-row:hover { background: rgba(166,72,34,0.04); }
+  .glance-row .g-num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--rust); }
+  .glance-row .g-date { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--ink-soft); }
+  .glance-row .g-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--moss-deep); background: rgba(74,93,58,0.12); padding: 3px 6px; }
+  .glance-row .g-text { font-family: 'Cormorant Garamond', serif; font-size: 19px; line-height: 1.3; color: var(--ink); }
+  .glance-row .g-text small { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); display: block; margin-top: 2px; }
+  .glance-row .g-arrow { font-family: 'DM Mono', monospace; color: var(--rust); opacity: 0.5; }
+  .glance-row.is-anchor .g-num { color: var(--rust-deep); font-weight: 600; }
+  .glance-row.is-anchor .g-tag { background: rgba(166,72,34,0.18); color: var(--rust-deep); }
+
+  /* === DETAILS / COLLAPSED DAY === */
+  details.day-details { border-bottom: 1px solid var(--line); padding: 22px 0; }
+  details.day-details:first-child { border-top: 1px solid var(--line); }
+  details.day-details summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 80px 90px 1fr auto; gap: 22px; align-items: baseline; padding: 6px 12px; transition: background 0.2s; }
+  details.day-details summary::-webkit-details-marker { display: none; }
+  details.day-details summary:hover { background: rgba(166,72,34,0.04); }
+  details.day-details summary .s-num { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.18em; color: var(--rust); }
+  details.day-details summary .s-date { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: var(--ink-soft); }
+  details.day-details summary .s-text { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.25; color: var(--ink); }
+  details.day-details summary .s-text small { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); display: block; margin-top: 4px; }
+  details.day-details summary .s-toggle { display: none; }
+  details.day-details .day-detail-body { padding: 30px 12px 12px; max-width: 880px; }
+  /* When a day is inside details, hide the redundant sidebar header — summary already shows that info */
+  details.day-details .day { grid-template-columns: 1fr; gap: 0; padding: 0; border-top: none; }
+  details.day-details .day-header { display: none; }
+  details.day-details .day-body { min-width: 0; padding-top: 24px; }
+  details.day-details > article.day { padding: 8px 12px 12px; }
+  /* Smooth scroll offset for sticky nav */
+  details.day-details { scroll-margin-top: 70px; }
+  html { scroll-behavior: smooth; }
+  /* Carousel image fallback while loading */
+  .carousel-card { background: linear-gradient(135deg, rgba(166,72,34,0.3), rgba(74,93,58,0.3)); }
+  .carousel-card img { transition: opacity 0.4s; }
+  .carousel-card img[src=""] { opacity: 0; }
+
+  /* === APPENDIX SECTION === */
+  .appendix { background: rgba(166,72,34,0.04); padding: 80px 0; border-top: 2px solid var(--rust); }
+  .appendix .section-tag { color: var(--rust); }
+  .appendix-intro { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); margin-bottom: 32px; max-width: 720px; }
+  .appendix details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  .appendix details summary { font-family: 'DM Serif Display', serif; font-size: 22px; padding: 10px 6px; cursor: pointer; list-style: none; }
+  .appendix details summary::-webkit-details-marker { display: none; }
+  .appendix details summary::before { content: '+'; color: var(--rust); margin-right: 14px; display: inline-block; transition: transform 0.2s; }
+  .appendix details[open] summary::before { content: '−'; }
+  .appendix details .appendix-body { padding: 14px 28px 22px; }
+
+  /* === DAY FLOW: scannable morning / lunch / afternoon / dinner grid === */
+  .day-flow { margin: 28px 0 32px; border-top: 1px solid var(--line); }
+  .flow-row { display: grid; grid-template-columns: 130px 1fr; gap: 28px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .flow-when { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); padding-top: 4px; }
+  .flow-what { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.4; color: var(--ink); }
+  .flow-what em { color: var(--ink-soft); font-style: italic; font-size: 0.85em; display: block; margin-top: 3px; }
+  .flow-what b { font-weight: 600; }
+  @media (max-width: 640px) {
+    .flow-row { grid-template-columns: 1fr; gap: 4px; }
+    .flow-when { padding-top: 0; }
+  }
+
+  /* === SLIDE MODE: hide operational detail per day, reveal with toggle === */
+  details.day-details .travel-row,
+  details.day-details .sched-note,
+  details.day-details .blocks,
+  details.day-details .swap,
+  details.day-details .minimap,
+  details.day-details .narrative,
+  details.day-details .meals-block,
+  details.day-details .meal .veg,
+  details.day-details .meal .asian,
+  details.day-details .meal .meat-ok,
+  details.day-details .meal .market,
+  details.day-details .meal .hours,
+  details.day-details .meals-block > .label,
+  details.day-details a.place-link::after,
+  details.day-details .hours {
+    display: none;
+  }
+  details.day-details a.place-link {
+    border-bottom: none;
+    color: inherit;
+  }
+  details.day-details.show-detail .travel-row,
+  details.day-details.show-detail .sched-note,
+  details.day-details.show-detail .blocks,
+  details.day-details.show-detail .swap,
+  details.day-details.show-detail .minimap,
+  details.day-details.show-detail .narrative,
+  details.day-details.show-detail .meals-block {
+    display: block;
+  }
+  details.day-details.show-detail .meals-block > .label { display: block; }
+  details.day-details.show-detail a.place-link {
+    border-bottom: 1px dotted var(--rust);
+  }
+  details.day-details.show-detail a.place-link::after { display: inline; }
+  details.day-details.show-detail .hours { display: inline-block; }
+  details.day-details.show-detail .veg,
+  details.day-details.show-detail .asian,
+  details.day-details.show-detail .meat-ok,
+  details.day-details.show-detail .market { display: inline-block; }
+
+  .detail-toggle {
+    display: inline-block;
+    margin: 36px 0 8px;
+    padding: 9px 18px;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .detail-toggle:hover { border-color: var(--rust); color: var(--rust); background: rgba(166,72,34,0.04); }
+  details.day-details.show-detail .detail-toggle::before { content: '— hide '; }
+  details.day-details:not(.show-detail) .detail-toggle::before { content: '+ '; }
+
+  /* Slim down the day-detail body padding now that it's slide-mode */
+  details.day-details .day-body { padding-top: 18px; }
+
+  /* === COMPACT NAV === */
+  .topnav { position: sticky; top: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 10px 56px; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; z-index: 50; display: flex; gap: 24px; align-items: center; }
+  .topnav .topnav-brand { color: var(--rust); font-weight: 500; }
+  .topnav a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+  .topnav a:hover { border-bottom-color: var(--rust); color: var(--ink); }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     .container { padding: 0 36px; }
     .hero { padding: 24px 32px 32px; }
     .hero-compass { display: none; }
     .know-grid, .prebook-grid { grid-template-columns: 1fr; gap: 30px; }
+    .intro-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
   }
   @media (max-width: 800px) {
     .day { grid-template-columns: 1fr; gap: 24px; padding: 50px 0; }
@@ -194,6 +407,12 @@
     .day-tag { margin-top: 0; }
     .day-name { margin-top: 0; }
     .section, .days, .know, .prebook { padding: 80px 0; }
+  }
+  @media (max-width: 800px) {
+    .live-here .lh-grid { grid-template-columns: 1fr; gap: 24px; }
+    .meal { grid-template-columns: 1fr; gap: 4px; }
+    .meal .meal-tag { padding-top: 0; }
+    .minimap { aspect-ratio: 4 / 3; }
   }
   @media (max-width: 640px) {
     body { font-size: 17px; }
@@ -236,9 +455,9 @@
       <text x="118" y="62" text-anchor="middle" font-family="DM Mono" font-size="6" fill="currentColor" stroke="none">E</text>
     </svg>
 
-    <div class="hero-tagline">A weekend, every day</div>
+    <div class="hero-tagline">Family trip · Jun 25 – Jul 6 · 2026</div>
     <h1 class="hero-title">Italia</h1>
-    <div class="hero-sub">Two lakes, the Dolomites, and what life could feel like</div>
+    <div class="hero-sub">Lake Garda · the Dolomites · Merano · Lake Garda</div>
   </div>
 
   <div class="hero-meta">
@@ -248,59 +467,89 @@
 </header>
 
 
-<section class="section warm reveal">
-  <div class="container">
-    <div class="section-tag">Section II · Route Overview</div>
-    <h2 class="section-heading">Five bases, <em>no rental car.</em></h2>
+<nav class="topnav">
+  <span class="topnav-brand">Italia · Jun 25 – Jul 6 · 2026</span>
+  <a href="#days">Days</a>
+  <a href="#appendix">Logistics</a>
+</nav>
 
-    <ol class="route-list">
-      <li class="route-row">
-        <span class="num">01 / 05</span>
-        <div class="place">Desenzano del Garda
-          <small>Lake Garda's south shore — Sirmione's peninsula, Parco Natura Viva, the rabbit island.</small>
-        </div>
-        <div class="meta"><strong>2 nights</strong>Jun 25 – 27</div>
-      </li>
-      <li class="route-row">
-        <span class="num">02 / 05</span>
-        <div class="place">Castelrotto / Siusi
-          <small>Tiny alpine village under the Sassolungo, gateway to the Alpe di Siusi and Lago di Fiè.</small>
-        </div>
-        <div class="meta"><strong>2 nights</strong>Jun 27 – 29</div>
-      </li>
-      <li class="route-row">
-        <span class="num">03 / 05</span>
-        <div class="place">Merano
-          <small>South Tyrolean spa town — Trauttmansdorff Gardens, Friday market, orchard bike paths, Therme.</small>
-        </div>
-        <div class="meta"><strong>4 nights</strong>Jun 29 – Jul 3</div>
-      </li>
-      <li class="route-row">
-        <span class="num">04 / 05</span>
-        <div class="place">Riva del Garda
-          <small>The dramatic north end of Lake Garda — cliffs, Cascate del Varone, a perfect kid bike ride.</small>
-        </div>
-        <div class="meta"><strong>2 nights</strong>Jul 3 – 5</div>
-      </li>
-      <li class="route-row">
-        <span class="num">05 / 05</span>
-        <div class="place">Malpensa airport hotel
-          <small>One quiet night before the early flight home.</small>
-        </div>
-        <div class="meta"><strong>1 night</strong>Jul 5</div>
-      </li>
-    </ol>
+
+<section class="carousel reveal">
+  <div class="carousel-hint">scroll → · the trip in pictures</div>
+  <div class="carousel-track">
+    <div class="carousel-card"><img src="images/02-sirmione-castle.jpg" alt="Sirmione · Castello Scaligero"><div class="carousel-cap"><span class="num">Day 02</span><div class="title">Sirmione</div><div class="sub">Castello Scaligero · the peninsula</div></div></div>
+    <div class="carousel-card"><img src="images/02-parco-giraffes.jpg" alt="Parco Natura Viva"><div class="carousel-cap"><span class="num">Day 02</span><div class="title">Parco Natura Viva</div><div class="sub">lemurs, giraffes, kids' farm</div></div></div>
+    <div class="carousel-card"><img src="images/03-rabbit-island.jpg" alt="Isola di San Biagio"><div class="carousel-cap"><span class="num">Day 03</span><div class="title">Isola di San Biagio</div><div class="sub">the rabbit island · wade across</div></div></div>
+    <div class="carousel-card"><img src="images/03-castelrotto.jpg" alt="Castelrotto village"><div class="carousel-cap"><span class="num">Day 03</span><div class="title">Castelrotto</div><div class="sub">Tyrolean village under the Sciliar</div></div></div>
+    <div class="carousel-card"><img src="images/04-sassolungo.jpg" alt="Sassolungo from the Alpe"><div class="carousel-cap"><span class="num">Day 04</span><div class="title">Alpe di Siusi</div><div class="sub">Sassolungo wall · 1850 m</div></div></div>
+    <div class="carousel-card"><img src="images/04-lago-di-fie.jpg" alt="Lago di Fiè"><div class="carousel-cap"><span class="num">Day 04</span><div class="title">Lago di Fiè</div><div class="sub">kid-sized alpine lake · Völser Weiher</div></div></div>
+    <div class="carousel-card"><img src="images/05-carezza.jpg" alt="Lago di Carezza"><div class="carousel-cap"><span class="num">Day 05</span><div class="title">Lago di Carezza</div><div class="sub">emerald lake under the Latemar</div></div></div>
+    <div class="carousel-card"><img src="images/05-trauttmansdorff.jpg" alt="Trauttmansdorff Castle Gardens"><div class="carousel-cap"><span class="num">Day 05</span><div class="title">Trauttmansdorff</div><div class="sub">80 themed gardens · animal trails</div></div></div>
+    <div class="carousel-card"><img src="images/05-merano-arcades.jpg" alt="Merano old town arcades"><div class="carousel-cap"><span class="num">Day 05</span><div class="title">Merano · the arcades</div><div class="sub">★ four nights here</div></div></div>
+    <div class="carousel-card"><img src="images/06-orchards.jpg" alt="South Tyrol apple orchards"><div class="carousel-cap"><span class="num">Day 06</span><div class="title">Apple orchards</div><div class="sub">the Etschtalradweg by bike to Lana</div></div></div>
+    <div class="carousel-card"><img src="images/07-cable-car.jpg" alt="Funivia Merano 2000"><div class="carousel-cap"><span class="num">Day 07</span><div class="title">Merano 2000</div><div class="sub">glass cabin gondola to 1900 m</div></div></div>
+    <div class="carousel-card"><img src="images/07-tappeiner.jpg" alt="Tappeiner Promenade"><div class="carousel-cap"><span class="num">Day 07</span><div class="title">Tappeiner Promenade</div><div class="sub">5 km panoramic path above Merano</div></div></div>
+    <div class="carousel-card"><img src="images/07-merano-panorama.jpg" alt="Merano panorama"><div class="carousel-cap"><span class="num">Day 07</span><div class="title">Merano · from above</div><div class="sub">the valley at golden hour</div></div></div>
+    <div class="carousel-card"><img src="images/08-castel-tirolo.jpg" alt="Castel Tirolo"><div class="carousel-cap"><span class="num">Day 08</span><div class="title">Schloss Tirol</div><div class="sub">castle above the Merano valley</div></div></div>
+    <div class="carousel-card"><img src="images/08-tirolo.jpg" alt="Tirolo village"><div class="carousel-cap"><span class="num">Day 08</span><div class="title">Tirolo</div><div class="sub">★ sunset Buschenschank dinner</div></div></div>
+    <div class="carousel-card"><img src="images/09-riva.jpg" alt="Riva del Garda"><div class="carousel-cap"><span class="num">Day 09</span><div class="title">Riva del Garda</div><div class="sub">cliffs at the lake's north end</div></div></div>
+    <div class="carousel-card"><img src="images/09-cascate-varone.jpg" alt="Cascate del Varone"><div class="carousel-cap"><span class="num">Day 09</span><div class="title">Cascate del Varone</div><div class="sub">gorge waterfall · stroller-safe</div></div></div>
+    <div class="carousel-card"><img src="images/09-bastione.jpg" alt="Bastione di Riva"><div class="carousel-cap"><span class="num">Day 09</span><div class="title">Bastione di Riva</div><div class="sub">free elevator up to the sunset</div></div></div>
+    <div class="carousel-card"><img src="images/10-torbole.jpg" alt="Torbole windsurfers"><div class="carousel-cap"><span class="num">Day 10</span><div class="title">Torbole</div><div class="sub">north Garda wind · windsurfers</div></div></div>
+    <div class="carousel-card"><img src="images/11-limone.jpg" alt="Limone sul Garda"><div class="carousel-cap"><span class="num">bonus</span><div class="title">Limone sul Garda</div><div class="sub">lemon groves on cliffs</div></div></div>
+  </div>
+</section>
+
+
+<section class="section reveal">
+  <div class="container">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:20px; line-height:1.55; color:var(--ink); max-width:720px; font-style:italic;">
+      Ten days, four bases. Two short stops on Lake Garda, two in the Dolomites, four in Merano — the part where every day looks like a regular Tuesday. No rental car the whole way through. Trains during nap time.
+    </p>
+  </div>
+</section>
+
+
+<section class="glance reveal" id="days">
+  <div class="container">
+    <div class="section-tag">The eleven days</div>
+    <h2 class="section-heading">At a <em>glance.</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:var(--ink-soft); margin-bottom:10px; max-width:680px;">One line per day. Click any row to jump straight to that day below.</p>
+
+    <ul class="glance-list">
+      <li class="glance-row" onclick="openDay('day-01')"><span class="g-num">Day 01</span><span class="g-date">Thu 25 Jun</span><span class="g-tag">arrival</span><span class="g-text">Land MXP, two trains to Lake Garda<small>Malpensa Express → Centrale → Desenzano. In bed by 22:30.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-02')"><span class="g-num">Day 02</span><span class="g-date">Fri 26 Jun</span><span class="g-tag">Desenzano</span><span class="g-text">Sirmione peninsula + Parco Natura Viva<small>Ferry, castle, Jamaica Beach. Afternoon at the zoo.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-03')"><span class="g-num">Day 03</span><span class="g-date">Sat 27 Jun</span><span class="g-tag">→ Castelrotto</span><span class="g-text">Rabbit island, then trains to the Dolomites<small>San Biagio at dawn · train Verona→Bolzano · bus to Castelrotto.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-04')"><span class="g-num">Day 04</span><span class="g-date">Sun 28 Jun</span><span class="g-tag">Castelrotto</span><span class="g-text">Alpe di Siusi morning + Lago di Fiè afternoon<small>Gondola to Compatsch · alpacas · alpine lake swim.</small></span></li>
+      <li class="glance-row is-anchor" onclick="openDay('day-05')"><span class="g-num">Day 05</span><span class="g-date">Mon 29 Jun</span><span class="g-tag">→ Merano ★</span><span class="g-text">Carezza, then arrive at the Therme<small>Karersee 20-min loop · train to Merano · 2-hour soak at Therme Meran.</small></span></li>
+      <li class="glance-row is-anchor" onclick="openDay('day-06')"><span class="g-num">Day 06</span><span class="g-date">Tue 30 Jun</span><span class="g-tag">Merano · Tirolo + pizza</span><span class="g-text">Tirolo afternoon + soulful Neapolitan pizza<small>Falknerpromenade · Schloss Tirol · Soulfood Pizza Pane Vino dinner.</small></span></li>
+      <li class="glance-row is-anchor" onclick="openDay('day-07')"><span class="g-num">Day 07</span><span class="g-date">Wed 1 Jul</span><span class="g-tag">Merano · mountain + gardens</span><span class="g-text">Cable car morning, Trauttmansdorff afternoon<small>Glass cabin gondola + Alpin Bob · 80 themed gardens with animal trails.</small></span></li>
+      <li class="glance-row is-anchor" onclick="openDay('day-08')"><span class="g-num">Day 08</span><span class="g-date">Thu 2 Jul</span><span class="g-tag">Merano · bike day</span><span class="g-text">Bike to Götzfried's farm in Lana<small>12 km flat through orchards · farm lunch with petting zoo + playground · cook-at-home evening.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-09')"><span class="g-num">Day 09</span><span class="g-date">Fri 3 Jul</span><span class="g-tag">→ Riva</span><span class="g-text">Friday market, three trains to north Garda<small>Market picnic · train + bus · Cascate del Varone + Bastione sunset.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-10')"><span class="g-num">Day 10</span><span class="g-date">Sat 4 Jul</span><span class="g-tag">Riva + pizza</span><span class="g-text">Bike to Torbole, swim at Lago di Tenno, Neapolitan pizza<small>Lakefront cycle · windsurfers · Canale di Tenno · Ristorante Sud dinner.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-11')"><span class="g-num">Day 11</span><span class="g-date">Sun 5 Jul</span><span class="g-tag">→ MXP</span><span class="g-text">Last lake swim, transit to airport<small>Spiaggia Sabbioni · bus + train + Malpensa Express.</small></span></li>
+      <li class="glance-row" onclick="openDay('day-12')"><span class="g-num">Day 12</span><span class="g-date">Mon 6 Jul</span><span class="g-tag">departure</span><span class="g-text">Fly to Lisbon 05:50<small>Terminal at 03:30.</small></span></li>
+    </ul>
+    <p class="sched-note" style="margin-top:24px;">★ = Merano (the place we're considering moving to · 4 nights · daily-life days)</p>
   </div>
 </section>
 
 
 <section class="days">
   <div class="container">
-    <div class="section-tag reveal">Section III · Day by Day</div>
-    <h2 class="section-heading reveal">A weekend, <em>every day.</em></h2>
+    <div class="section-tag reveal">Day by day</div>
+    <h2 class="section-heading reveal" style="margin-bottom:24px;">A weekend, <em>every day.</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--ink-soft); margin-bottom:46px; max-width:680px;">What we'd do, where we'd eat, and what makes each day worth the morning wake-up with the girls.</p>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-01" open>
+  <summary>
+    <span class="s-num">Day 01</span>
+    <span class="s-date">Thu 25 Jun</span>
+    <span class="s-text">Land MXP, glide east to Lake Garda<small>Arrival</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 01</div>
         <div class="day-date"><span class="month">Jun</span>25</div>
@@ -311,7 +560,27 @@
         <h3 class="day-headline">Land MXP, glide east to Lake Garda.</h3>
         <p class="day-intro">A Schengen-internal flight from Lisbon, no immigration, no checked bags — train all the way to bed.</p>
 
-        <div class="photo-skip" aria-hidden="true"></div>
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Land Malpensa <b>18:50</b> · Malpensa Express to Milano Centrale, Trenord regional to Desenzano</span></div>
+          <div class="flow-row"><span class="flow-when"></span><span class="flow-what"><em>Two trains, no transfers we have to manage with bags.</em></span></div>
+          <div class="flow-row"><span class="flow-when">Night</span><span class="flow-what">In bed in Desenzano by 22:30</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Arrival day. Land Malpensa ~19:00, Malpensa Express to Milano Centrale, Trenord regional to Desenzano del Garda (~22:25 last departure). Two trains, no car seat, no transfers we have to manage with bags. In bed by ~22:30.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 1 route minimap">
+          <span class="minimap-label">Day 1 · MXP → Desenzano</span>
+          <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="120" x2="550" y2="120" stroke="#a64822" stroke-width="1" stroke-dasharray="5,4" opacity="0.7"/>
+            <g><circle cx="50" cy="120" r="5" fill="#a64822"/><text x="50" y="150" font-family="DM Mono" font-size="11" fill="#1a1a18" text-anchor="middle">MXP T1</text><text x="50" y="100" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">18:50</text></g>
+            <g><circle cx="280" cy="120" r="5" fill="#a64822"/><text x="280" y="150" font-family="DM Mono" font-size="11" fill="#1a1a18" text-anchor="middle">Milano Centrale</text><text x="280" y="100" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~20:30</text></g>
+            <g><circle cx="550" cy="120" r="5" fill="#a64822"/><text x="550" y="150" font-family="DM Mono" font-size="11" fill="#1a1a18" text-anchor="middle">Desenzano</text><text x="550" y="100" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~22:00</text></g>
+            <text x="165" y="115" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">Malpensa Express · 51m</text>
+            <text x="415" y="115" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">Frecciarossa · ~1h</text>
+          </svg>
+        </div>
 
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
@@ -319,23 +588,40 @@
           <span class="dot">·</span>
           Centrale <span class="arrow">→</span> Desenzano <span class="dur">~1h Frecciarossa</span>
         </div>
+        <p class="sched-note">Schedules below: current 2024–25 baseline · verify on Trenitalia in April 2026.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">18:50</div><div class="body">Land Malpensa Terminal 1. Schengen-internal flight from Lisbon — no immigration, no checked bags.</div></div>
-          <div class="block"><div class="time">19:25</div><div class="body"><strong>Malpensa Express</strong> to Milano Centrale. <em>51 min · €36 family pass for 2 adults + 2 kids.</em></div></div>
-          <div class="block"><div class="time">20:50</div><div class="body"><strong>Frecciarossa</strong> Centrale → Desenzano del Garda (~1h). Kids snack on board.</div></div>
-          <div class="block"><div class="time">22:30</div><div class="body">Hotel by ten-thirty. Lights out.</div></div>
+          <div class="block"><div class="time">18:50</div><div class="body">Land <a class="place-link" href="https://www.google.com/maps/place/Milan+Malpensa+Airport" target="_blank" rel="noopener">Malpensa Terminal 1</a>. Schengen-internal from Lisbon — no immigration, no checked bags.</div></div>
+          <div class="block"><div class="time">19:25</div><div class="body"><strong>Malpensa Express</strong> to <a class="place-link" href="https://www.google.com/maps/place/Milano+Centrale+railway+station" target="_blank" rel="noopener">Milano Centrale</a>. <span class="hours">runs every 30 min</span> <em>51 min · €36 family pass for 2 adults + 2 kids.</em></div></div>
+          <div class="block"><div class="time">20:50</div><div class="body"><strong>Trenord regional</strong> Centrale → <a class="place-link" href="https://www.google.com/maps/place/Desenzano+del+Garda+railway+station" target="_blank" rel="noopener">Desenzano del Garda</a>. <span class="hours">~1h25 · last Centrale departure ~22:25</span></div></div>
+          <div class="block"><div class="time">22:00–22:30</div><div class="body">Apartment by half-ten. Lights out.</div></div>
+        </div>
+
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner</div>
+            <div class="meal-body"><b>On the train.</b> Pack a picnic in Lisbon — bread, cheese, fruit, a chocolate bar — or grab focaccia at Milano Centrale's <a class="place-link" href="https://www.google.com/maps/search/Mercato+Centrale+Milano/" target="_blank" rel="noopener">Mercato Centrale</a> between trains <span class="veg">veg-easy</span> <span class="market">market</span></div>
+          </div>
         </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
-          They stay on trains the whole journey — no chaotic transfers, no car seats, no taxis.
+          They stay on trains the whole journey — no chaotic transfers, no car seats, no taxis. <em>Binario, biglietto, treno.</em>
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-02">
+  <summary>
+    <span class="s-num">Day 02</span>
+    <span class="s-date">Fri 26 Jun</span>
+    <span class="s-text">Sirmione's empty peninsula, then Parco Natura Viva<small>Desenzano</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 02</div>
         <div class="day-date"><span class="month">Jun</span>26</div>
@@ -376,28 +662,71 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">First ferry to <b>Sirmione</b> before the crowds<em>Castello Scaligero · Jamaica Beach rock shelves</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what">Trattoria on the Desenzano lakefront</span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Naps · then Uber to <b>Parco Natura Viva</b><em>Lemurs, giraffes, kids' farm</em></span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Picnic dinner from a panificio · by the lake</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Morning: first ferry to Sirmione, walk the peninsula before the crowds (castle, Jamaica Beach rock shelves), ferry back. Lunch on the Desenzano lakefront, naps at the hotel. Afternoon: pre-booked Uber/NCC ~25 min to Parco Natura Viva — small zoo with lemurs, giraffes, kids' farm area. Back for a picnic dinner.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 2 minimap">
+          <span class="minimap-label">Day 2 · two halves, the lake then the wild</span>
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="260" cy="125" rx="180" ry="45" fill="#2c5466" opacity="0.12"/>
+            <text x="260" y="50" font-family="Cormorant Garamond" font-style="italic" font-size="12" fill="#3d3a35" text-anchor="middle">— Lake Garda, south basin —</text>
+            <g><circle cx="120" cy="125" r="5" fill="#a64822"/><text x="120" y="155" font-family="DM Mono" font-size="10" text-anchor="middle">Desenzano</text></g>
+            <path d="M 130 125 Q 200 105 245 125" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="255" cy="125" r="5" fill="#a64822"/><text x="255" y="155" font-family="DM Mono" font-size="10" text-anchor="middle">Sirmione</text><text x="255" y="105" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">peninsula · castle · Jamaica Beach</text></g>
+            <path d="M 130 130 Q 280 200 460 145" stroke="#a64822" stroke-width="0.9" stroke-dasharray="6,4" fill="none"/>
+            <g><circle cx="470" cy="145" r="5" fill="#a64822"/><text x="490" y="148" font-family="DM Mono" font-size="10">Parco Natura Viva</text><text x="490" y="162" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35">Bussolengo · ~25 min Uber</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Ferry Desenzano <span class="arrow">↔</span> Sirmione (Navigarda)
           <span class="dot">·</span>
           Uber Desenzano <span class="arrow">↔</span> Parco Natura Viva <span class="dur">~25m, ~€35-40 each way</span>
         </div>
+        <p class="sched-note">Ferry: Navigarda Desenzano↔Sirmione runs ~hourly 7:30–19:00 in summer. Verify schedule April 2026.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">7:30</div><div class="body">Ferry Desenzano → Sirmione, Navigarda. Empty lanes, cool morning air.</div></div>
-          <div class="block"><div class="time">8:00 – 11:30</div><div class="body">Walk the peninsula. <strong>Castello Scaligero</strong> opens 8:30. Continue to <strong>Jamaica Beach</strong> at the tip — flat warm rock shelves, shallow water, climbing rocks. Breakfast at a piazza café.</div></div>
+          <div class="block"><div class="time">7:30</div><div class="body">Ferry <a class="place-link" href="https://www.google.com/maps/place/Desenzano+del+Garda+ferry+terminal" target="_blank" rel="noopener">Desenzano</a> → <a class="place-link" href="https://www.google.com/maps/place/Sirmione,+BS,+Italy" target="_blank" rel="noopener">Sirmione</a>. Navigarda. Empty lanes, cool morning air. <span class="hours">first ferry ~7:30</span></div></div>
+          <div class="block"><div class="time">8:00 – 11:30</div><div class="body">Walk the peninsula. <a class="place-link" href="https://www.google.com/maps/place/Scaligero+Castle+of+Sirmione" target="_blank" rel="noopener"><strong>Castello Scaligero</strong></a> <span class="hours">8:30–19:00, closed Mon</span>. Continue to <a class="place-link" href="https://www.google.com/maps/place/Jamaica+Beach,+Sirmione" target="_blank" rel="noopener"><strong>Jamaica Beach</strong></a> at the tip — flat warm rock shelves, shallow water, climbing rocks.</div></div>
           <div class="block"><div class="time">11:30</div><div class="body">Ferry back to Desenzano.</div></div>
-          <div class="block nap"><div class="time">13 – 15</div><div class="body">Lunch + nap at hotel.</div></div>
-          <div class="block"><div class="time">15:00</div><div class="body">Pre-booked <strong>Uber/NCC</strong> Desenzano → Parco Natura Viva, Bussolengo (~25 min).</div></div>
-          <div class="block"><div class="time">15:30 – 18:00</div><div class="body"><strong>Parco Natura Viva</strong> — lemurs, giraffes, baby zoo. Last admission 17:30. Open 9:00 – 19:00.</div></div>
-          <div class="block"><div class="time">18:30</div><div class="body">Uber back to Desenzano.</div></div>
-          <div class="block"><div class="time">20:00</div><div class="body">Lakefront trattoria dinner. Light holds until ~21:00.</div></div>
+          <div class="block"><div class="time">12:00 – 13:00</div><div class="body"><b>Lunch — the main meal.</b> Sit-down on the Desenzano lakefront. (See meals below.)</div></div>
+          <div class="block nap"><div class="time">13:00 – 15:00</div><div class="body">Nap at hotel.</div></div>
+          <div class="block"><div class="time">15:00</div><div class="body">Pre-booked <strong>Uber/NCC with car seats</strong> Desenzano → <a class="place-link" href="https://www.google.com/maps/place/Parco+Natura+Viva" target="_blank" rel="noopener">Parco Natura Viva</a>, Bussolengo (~25 min).</div></div>
+          <div class="block"><div class="time">15:30 – 18:00</div><div class="body"><strong>Parco Natura Viva</strong> — lemurs, giraffes, baby zoo. <span class="hours">9:00–19:00 · last entry 17:30</span></div></div>
+          <div class="block"><div class="time">18:30</div><div class="body">Uber back to Desenzano. Pick up dinner-to-go from a panificio en route or in town.</div></div>
+          <div class="block"><div class="time">19:00 – 19:30</div><div class="body">Picnic dinner by the lake or on the hotel terrace. Kids in bed by 20:00.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          <b>Antica Trattoria Cavallino</b> on the Desenzano lakefront — fresh lake fish, outdoor tables. Or wander the harbor and pick whichever has the best feel.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Hotel buffet (most Desenzano hotels open 7:00) — OR walk to <a class="place-link" href="https://www.google.com/maps/search/panificio+desenzano+lungolago/" target="_blank" rel="noopener">a lakefront panificio</a> for cornetti + cappuccino after the ferry. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body"><b><a class="place-link" href="https://www.google.com/maps/search/Antica+Trattoria+Cavallino+Desenzano/" target="_blank" rel="noopener">Antica Trattoria Cavallino</a></b> on the Desenzano lakefront — lake fish for Raul, fresh handmade pasta with seasonal veg for you. <em>Or wander the harbor — pick by feel.</em> <span class="veg">veg-easy</span> <span class="meat-ok">lake fish</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · to-go</div>
+            <div class="meal-body">Pizza al taglio + a salad-to-go from <a class="place-link" href="https://www.google.com/maps/search/pizzeria+al+taglio+desenzano/" target="_blank" rel="noopener">any pizzeria on Via Roma</a>. Eat on the hotel terrace. <span class="veg">veg-easy</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">If too tired or it rains</span>
+          <p><b>Skip Parco Natura Viva</b>, stay in Desenzano. Walk the lakefront promenade to the <a class="place-link" href="https://www.google.com/maps/search/Parco+Villa+Brunati+Desenzano/" target="_blank" rel="noopener">Villa Brunati park</a> playground (waterfront, shaded), gelato at any of the lake-facing parlors. Swimming at the public beach Spiaggia d'Oro is right in town.</p>
+          <p><b>If kids want more animals but not a long drive:</b> the small <a class="place-link" href="https://www.google.com/maps/search/Movieland+Park+Lazise/" target="_blank" rel="noopener">Lazise area</a> has a much closer mini-zoo + playground combo, ~15 min taxi.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
@@ -410,9 +739,17 @@
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-03">
+  <summary>
+    <span class="s-num">Day 03</span>
+    <span class="s-date">Sat 27 Jun</span>
+    <span class="s-text">Rabbit Island at sunrise, Calvario chapel at sunset<small>→ Castelrotto</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 03</div>
         <div class="day-date"><span class="month">Jun</span>27</div>
@@ -453,6 +790,33 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">Wade across to <b>Isola di San Biagio</b><em>The wild rabbit island · swim, snack from the island bar</em></span></div>
+          <div class="flow-row"><span class="flow-when">Midday</span><span class="flow-what">Train to <b>Castelrotto</b> via Verona + Bolzano<em>Deep nap on the Verona–Bolzano leg</em></span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Village fountain · gentle path up to the <b>Calvario chapel</b></span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Picnic on the chapel bench as the Sciliar goes gold</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Transfer day, Garda → Dolomites. Early bus to Manerba/Porto Torchio, wade or small boat across to Isola di San Biagio (wild rabbits on the island). Back to Desenzano, check out, train Desenzano → Verona → Bolzano (~2h, naps), SAD bus 170 to Castelrotto. Arrive ~16:00. Easy afternoon: village fountain, Calvario chapel walk for sunset, picnic dinner.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 3 minimap">
+          <span class="minimap-label">Day 3 · lake → alps · ~5h of moving · nap on train</span>
+          <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="120" x2="560" y2="120" stroke="#a64822" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.7"/>
+            <g><circle cx="40" cy="120" r="4.5" fill="#a64822"/><text x="40" y="145" font-family="DM Mono" font-size="9.5" text-anchor="middle">San Biagio</text><text x="40" y="106" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">06–10</text></g>
+            <g><circle cx="160" cy="120" r="4.5" fill="#a64822"/><text x="160" y="145" font-family="DM Mono" font-size="9.5" text-anchor="middle">Desenzano</text><text x="160" y="106" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">12:30</text></g>
+            <g><circle cx="280" cy="120" r="4.5" fill="#a64822"/><text x="280" y="145" font-family="DM Mono" font-size="9.5" text-anchor="middle">Verona</text><text x="280" y="106" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~13:00</text></g>
+            <g><circle cx="420" cy="120" r="4.5" fill="#a64822"/><text x="420" y="145" font-family="DM Mono" font-size="9.5" text-anchor="middle">Bolzano</text><text x="420" y="106" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~14:30</text></g>
+            <g><circle cx="560" cy="120" r="5" fill="#7a3219"/><text x="560" y="145" font-family="DM Mono" font-size="9.5" text-anchor="middle">Castelrotto</text><text x="560" y="106" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~16:00</text></g>
+            <text x="100" y="170" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">bus 35m</text>
+            <text x="220" y="170" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">train 30m</text>
+            <text x="350" y="170" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">train 1h30 · NAP</text>
+            <text x="490" y="170" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">SAD 170 · 50m</text>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Bus Desenzano <span class="arrow">↔</span> Porto Torchio <span class="dur">~35m</span>
@@ -461,27 +825,45 @@
           <span class="dot">·</span>
           SAD Bus 170 <span class="arrow">→</span> Castelrotto <span class="dur">~50m</span>
         </div>
+        <p class="sched-note">Trains Desenzano→Verona run ~hourly. Verona→Bolzano regional ~hourly + Frecciarossa peaks. SAD Bus 170 Bolzano→Castelrotto: hourly from Bolzano bus terminal next to the station. Verify schedules in April 2026.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">6:00</div><div class="body">Wake, breakfast, pack. Leave bags at hotel reception.</div></div>
-          <div class="block"><div class="time">8:00</div><div class="body">Bus Desenzano → Manerba / Porto Torchio (~35 min). <em>Backup: taxi ~€20.</em></div></div>
-          <div class="block"><div class="time">8:45 – 10:30</div><div class="body">Wade or take the small €2.50 boat to <strong>Isola di San Biagio</strong>. Wild rabbits, swim from the rocky beach, snack from the island bar.</div></div>
+          <div class="block"><div class="time">6:00</div><div class="body">Wake, hotel breakfast, pack. Leave bags at hotel reception.</div></div>
+          <div class="block"><div class="time">8:00</div><div class="body">ARRIVA bus LN027 Desenzano → <a class="place-link" href="https://www.google.com/maps/place/Porto+Torchio,+Manerba+del+Garda" target="_blank" rel="noopener">Manerba / Porto Torchio</a> (~35 min). <em>Backup: taxi ~€20.</em></div></div>
+          <div class="block"><div class="time">8:45 – 10:30</div><div class="body">Wade or take the small €2.50 boat to <a class="place-link" href="https://www.google.com/maps/place/Isola+di+San+Biagio,+Manerba+del+Garda" target="_blank" rel="noopener"><strong>Isola di San Biagio</strong></a>. Wild rabbits, swim from the rocky beach, snack from the island bar. <span class="hours">island bar opens ~9:00 summer</span></div></div>
           <div class="block"><div class="time">10:30</div><div class="body">Bus back to Desenzano.</div></div>
-          <div class="block"><div class="time">11:30</div><div class="body">Hotel pickup, check out by 12:00.</div></div>
-          <div class="block"><div class="time">12:30</div><div class="body">Train Desenzano → Verona (~30 min).</div></div>
-          <div class="block nap"><div class="time">12:50 – 14:30</div><div class="body">Train Verona → Bolzano (~1h30) — nap window.</div></div>
-          <div class="block"><div class="time">14:30</div><div class="body">Bolzano. Quick gelato or snack at the station.</div></div>
+          <div class="block"><div class="time">11:30</div><div class="body">Quick early lunch in Desenzano · hotel pickup · check out by 12:00.</div></div>
+          <div class="block"><div class="time">12:30</div><div class="body">Train Desenzano → Verona (~30 min). <span class="hours">~hourly</span></div></div>
+          <div class="block nap"><div class="time">12:50 – 14:30</div><div class="body">Train Verona → <a class="place-link" href="https://www.google.com/maps/place/Bolzano+railway+station" target="_blank" rel="noopener">Bolzano</a> (~1h30) — deep nap.</div></div>
+          <div class="block"><div class="time">14:30</div><div class="body">Bolzano. Quick gelato at the station or walk 2 min to <a class="place-link" href="https://www.google.com/maps/search/Eccel+Bolzano/" target="_blank" rel="noopener">Eccel</a>.</div></div>
           <div class="block"><div class="time">15:00</div><div class="body">SAD Bus 170 Bolzano → Castelrotto (~50 min).</div></div>
-          <div class="block"><div class="time">16:00</div><div class="body">Arrive Castelrotto, check in, drop bags.</div></div>
-          <div class="block"><div class="time">16:30</div><div class="body">Walk to Piazza Krausen — village fountain, playground next to the church.</div></div>
-          <div class="block"><div class="time">17:30</div><div class="body">Walk up the <strong>Calvario di Castelrotto</strong> — gentle stations-of-the-cross path, ~25 min to the hilltop chapel. Panoramic views back to the Sciliar.</div></div>
-          <div class="block"><div class="time">19:30</div><div class="body">Stube dinner.</div></div>
+          <div class="block"><div class="time">16:00</div><div class="body">Arrive <a class="place-link" href="https://www.google.com/maps/place/Castelrotto,+BZ" target="_blank" rel="noopener">Castelrotto</a>, check in, drop bags.</div></div>
+          <div class="block"><div class="time">16:30</div><div class="body">Walk to <a class="place-link" href="https://www.google.com/maps/place/Piazza+Kraus,+Castelrotto" target="_blank" rel="noopener">Piazza Krausen</a> — village fountain, playground next to the church.</div></div>
+          <div class="block"><div class="time">17:30</div><div class="body">Walk up the <a class="place-link" href="https://www.google.com/maps/search/Calvario+Castelrotto/" target="_blank" rel="noopener"><strong>Calvario di Castelrotto</strong></a> — gentle stations-of-the-cross path, ~25 min to the hilltop chapel. Panoramic views back to the Sciliar. Bring the to-go dinner.</div></div>
+          <div class="block"><div class="time">18:00 – 19:00</div><div class="body">Picnic on the bench by the chapel as the light goes gold over the Sciliar.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          <b>Goldene Rose, Castelrotto</b> — classic Tyrolean stube, kasspatzln, Knödel, schlutzkrapfen, the works.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Hotel breakfast in Desenzano · pack pastries + fruit for the train.</div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body"><b>Quick early lunch in Desenzano 11:30</b> before the train — focaccia + caprese at <a class="place-link" href="https://www.google.com/maps/search/Focacceria+Desenzano/" target="_blank" rel="noopener">any focacceria on Via Roma</a>, or a proper sit-down at the hotel. <em>Sandwiches and fruit also fine if you'd rather travel light.</em> <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · picnic</div>
+            <div class="meal-body">In Castelrotto, walk past the church to <a class="place-link" href="https://www.google.com/maps/search/Bäckerei+Castelrotto/" target="_blank" rel="noopener">the village bakery</a> and pick up speck-and-cheese sandwiches + a veg one with mountain cheese + apple strudel. Eat on the way up the Calvario. <span class="veg">veg-easy</span> <span class="meat-ok">speck</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">If we're too tired for the Calvario</span>
+          <p><b>Skip the climb.</b> Castelrotto's main piazza has a fountain the kids will sit at for an hour, and the playground next to the church is the local Sunday-afternoon scene. Walk back to the apartment for the picnic on the balcony.</p>
+          <p><b>If we miss the morning bus to San Biagio:</b> a taxi from Desenzano is ~€20 and runs on demand. The rabbits don't go anywhere.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
@@ -494,9 +876,17 @@
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-04">
+  <summary>
+    <span class="s-num">Day 04</span>
+    <span class="s-date">Sun 28 Jun</span>
+    <span class="s-text">Alpe di Siusi at sunrise, Lago di Fiè in the afternoon<small>Castelrotto</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 04</div>
         <div class="day-date"><span class="month">Jun</span>28</div>
@@ -537,6 +927,29 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">First gondola up to <b>Alpe di Siusi</b> (1850 m)<em>Malga Tuene (bunny) · AlpenHotel Panorama (alpacas) · cows everywhere</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what">Malga on the meadow — Sanon, Saltria, or Floralpina</span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Naps · bus to <b>Lago di Fiè</b><em>Kid-sized alpine lake with playground on shore</em></span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Light dinner at the lake terrace</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Morning on Alpe di Siusi: bus to Siusi, first gondola up to Compatsch (1850 m). Walk to Malga Tuene (small playground + a rabbit) and AlpenHotel Panorama (alpacas). Lunch at a malga (Sanon, Saltria, or Floralpina — all kid-friendly). Gondola down, naps. Afternoon at Lago di Fiè (Völser Weiher) — kid-sized alpine lake with playground on shore. Light dinner at the lake.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 4 minimap">
+          <span class="minimap-label">Day 4 · Alpe di Siusi morning · Lago di Fiè afternoon · everything from Castelrotto</span>
+          <svg viewBox="0 0 600 230" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 60 120 L 130 50 L 200 110 L 280 40 L 350 100 L 430 60 L 500 110 L 560 70 L 560 130 L 60 130 Z" fill="#4a5d3a" opacity="0.15"/>
+            <g><circle cx="290" cy="180" r="6" fill="#7a3219"/><text x="290" y="205" font-family="DM Mono" font-size="10" text-anchor="middle">CASTELROTTO</text><text x="290" y="218" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">base · home for 2 nights</text></g>
+            <path d="M 280 175 Q 200 150 130 110" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="125" cy="105" r="5" fill="#a64822"/><text x="125" y="85" font-family="DM Mono" font-size="10" text-anchor="middle">Compatsch</text><text x="125" y="73" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">Alpe di Siusi 1850 m</text></g>
+            <path d="M 300 175 Q 380 165 460 165" stroke="#a64822" stroke-width="0.9" stroke-dasharray="6,4" fill="none"/>
+            <g><circle cx="465" cy="165" r="5" fill="#2c5466"/><text x="465" y="190" font-family="DM Mono" font-size="10" text-anchor="middle">Lago di Fiè</text><text x="465" y="148" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">Völser Weiher</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Bus Castelrotto <span class="arrow">→</span> Siusi <span class="dur">~10m</span>
@@ -545,24 +958,43 @@
           <span class="dot">·</span>
           Bus Castelrotto <span class="arrow">→</span> Lago di Fiè <span class="dur">~20m</span>
         </div>
+        <p class="sched-note">SAD bus Castelrotto↔Siusi every ~20 min in summer. Cabinovia Siusi runs 8:00–18:30 in summer (verify 2026). Bus to Lago di Fiè: SAD line 178 from Castelrotto, ~hourly.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">6:00</div><div class="body">Wake. Breakfast at hotel or village bakery.</div></div>
-          <div class="block"><div class="time">7:30</div><div class="body">Bus Castelrotto → Siusi am Schlern (cable car valley station).</div></div>
-          <div class="block"><div class="time">8:00</div><div class="body">First <strong>Cabinovia</strong> up to Compatsch (~12 min). Empty meadows, cool air, the cars ringing of bells from the herds.</div></div>
-          <div class="block"><div class="time">8:30 – 12:30</div><div class="body">Walk to <strong>Malga Tuene</strong> — kid-friendly hut with a small playground and a bunny. Continue to <strong>AlpenHotel Panorama</strong> for the alpacas. Hut breakfast at <em>Sanon</em>, <em>Saltria</em>, or <em>Floralpina</em>.</div></div>
-          <div class="block"><div class="time">12:45</div><div class="body">Cabinovia down.</div></div>
+          <div class="block"><div class="time">6:00</div><div class="body">Wake. Quick breakfast at hotel or grab cornetti from <a class="place-link" href="https://www.google.com/maps/search/Bäckerei+Castelrotto/" target="_blank" rel="noopener">the village bakery</a> to eat at the cable-car station.</div></div>
+          <div class="block"><div class="time">7:30</div><div class="body">Bus Castelrotto → <a class="place-link" href="https://www.google.com/maps/place/Siusi+allo+Sciliar,+BZ" target="_blank" rel="noopener">Siusi am Schlern</a> (cable car valley station).</div></div>
+          <div class="block"><div class="time">8:00</div><div class="body">First <a class="place-link" href="https://www.google.com/maps/search/Cabinovia+Alpe+di+Siusi/" target="_blank" rel="noopener"><strong>Cabinovia</strong></a> up to <a class="place-link" href="https://www.google.com/maps/place/Compatsch,+Castelrotto+BZ" target="_blank" rel="noopener">Compatsch</a> (~12 min). Empty meadows, cool air, cowbells. <span class="hours">8:00–18:30</span></div></div>
+          <div class="block"><div class="time">8:30 – 12:30</div><div class="body">Walk to <a class="place-link" href="https://www.google.com/maps/search/Malga+Tuene/" target="_blank" rel="noopener"><strong>Malga Tuene</strong></a> — kid-friendly hut with a small playground and a bunny. Continue to <a class="place-link" href="https://www.google.com/maps/search/AlpenHotel+Panorama+Alpe+di+Siusi/" target="_blank" rel="noopener"><strong>AlpenHotel Panorama</strong></a> for the alpacas.</div></div>
+          <div class="block"><div class="time">12:00 – 13:00</div><div class="body"><b>Lunch — the main meal</b> at a malga (hut). See picks below. Schlutzkrapfen for Rina, würstel + speck plate for Raul, apple strudel for everyone. <span class="hours">huts 11:00–17:00</span></div></div>
+          <div class="block"><div class="time">12:45 – 13:15</div><div class="body">Cabinovia down. Kids start to droop.</div></div>
           <div class="block nap"><div class="time">13:30 – 15:30</div><div class="body">Naps back at the hotel.</div></div>
-          <div class="block"><div class="time">15:45</div><div class="body">Bus Castelrotto → <strong>Lago di Fiè / Völser Weiher</strong> (~20 min).</div></div>
-          <div class="block"><div class="time">16:00 – 19:00</div><div class="body">Lago di Fiè — kid-sized alpine lake at the base of the Schlern. Swim, playground on the shore, shallow entry, lifeguards typically 10–18.</div></div>
-          <div class="block"><div class="time">19:30</div><div class="body">Dinner at the lake or back in Castelrotto.</div></div>
-          <div class="block"><div class="time">Bonus</div><div class="body"><div class="bonus"><b>If there's energy</b><strong>Hexenbänke</strong> (Witches' Benches) — easy alpine viewpoint walk on the Alpe. Iconic photo.</div></div></div>
+          <div class="block"><div class="time">15:45</div><div class="body">Bus Castelrotto → <a class="place-link" href="https://www.google.com/maps/place/Völser+Weiher" target="_blank" rel="noopener"><strong>Lago di Fiè / Völser Weiher</strong></a> (~20 min).</div></div>
+          <div class="block"><div class="time">16:00 – 19:00</div><div class="body">Lago di Fiè — kid-sized alpine lake at the base of the Schlern. Swim, playground on the shore, shallow entry. <span class="hours">lifeguards 10:00–18:00 in summer</span></div></div>
+          <div class="block"><div class="time">18:00 – 19:00</div><div class="body">Light dinner at the lake's <a class="place-link" href="https://www.google.com/maps/search/Hotel+Heubad+restaurant+Fiè/" target="_blank" rel="noopener">Hotel Heubad terrace</a> — or grab a sandwich-to-go from the lake kiosk and eat on a bench.</div></div>
+          <div class="block"><div class="time">19:30</div><div class="body">Bus back to Castelrotto. Kids in bed.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner picks</span>
-          <b>Hotel Heubad, Lago di Fiè</b> — lakefront terrace, mountain food. Or <b>Schloss Hotel Mirabell</b> back in Castelrotto.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Hotel breakfast 6:30 if open, OR cornetti to go from the village bakery — eat at the cable-car station with a coffee from the kiosk. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body"><b>A malga on the Alpe.</b> Top picks: <a class="place-link" href="https://www.google.com/maps/search/Gasthaus+Sanon+Alpe+di+Siusi/" target="_blank" rel="noopener">Gasthaus Sanon</a> (closest to Compatsch, biggest terrace), <a class="place-link" href="https://www.google.com/maps/search/Saltria+Alpe+di+Siusi/" target="_blank" rel="noopener">Saltria</a> (longer walk, more dramatic), <a class="place-link" href="https://www.google.com/maps/search/Hotel+Floralpina+Alpe+di+Siusi/" target="_blank" rel="noopener">Floralpina</a> (kid-friendly). All have full veg options — schlutzkrapfen (spinach-ricotta), kasspatzln, polenta with mushrooms. <span class="veg">strong veg</span> <span class="meat-ok">speck/würstel</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · light</div>
+            <div class="meal-body">Sandwich + apple from the <a class="place-link" href="https://www.google.com/maps/search/Lago+di+Fiè+kiosk/" target="_blank" rel="noopener">Lago di Fiè kiosk</a>, or a small plate on the Heubad terrace. <em>If kids are wired and you want to sit: <a class="place-link" href="https://www.google.com/maps/search/Schloss+Hotel+Mirabell+Castelrotto/" target="_blank" rel="noopener">Schloss Hotel Mirabell</a> back in Castelrotto, family-friendly.</em></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">Backups + flex</span>
+          <p><b>Weather plan B:</b> if it's pouring on the Alpe (mountain weather flips fast), skip Compatsch and do <a class="place-link" href="https://www.google.com/maps/place/Castelrotto,+BZ" target="_blank" rel="noopener">Castelrotto village morning</a> instead — bakery, fountain, playground, the Calvario walk if dry between showers. Save the gondola for Day 5 morning before leaving (it's on the way to Bolzano).</p>
+          <p><b>Bonus if there's energy:</b> the <a class="place-link" href="https://www.google.com/maps/search/Hexenbänke+Alpe+di+Siusi/" target="_blank" rel="noopener">Hexenbänke</a> (Witches' Benches) — short flat detour on the Alpe with the most iconic viewpoint.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
@@ -575,9 +1007,24 @@
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+  </div>
+</section>
+
+
+<section class="days">
+  <div class="container">
+
+    <details class="day-details" id="day-05">
+  <summary>
+    <span class="s-num">Day 05</span>
+    <span class="s-date">Mon 29 Jun</span>
+    <span class="s-text">Carezza at dawn, Trauttmansdorff at dusk<small>→ Merano</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 05</div>
         <div class="day-date"><span class="month">Jun</span>29</div>
@@ -585,8 +1032,8 @@
         <span class="day-tag">→ Merano</span>
       </header>
       <div class="day-body">
-        <h3 class="day-headline">Carezza at dawn, Trauttmansdorff at dusk.</h3>
-        <p class="day-intro">The most photographed lake in the Dolomites in the morning, then the most iconic gardens in South Tyrol at golden hour.</p>
+        <h3 class="day-headline">Arrive in Merano, soak at the Therme.</h3>
+        <p class="day-intro">Quick stop at Lago di Carezza on the way down, then settle into the apartment. Afternoon: two hours in eleven outdoor pools.</p>
 
         <div class="gallery">
           <figure class="photo photo-hero">
@@ -618,6 +1065,30 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">Bus to Bolzano · detour to <b>Lago di Carezza</b><em>20-min flat loop · emerald lake under the Latemar</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what">Stube lunch in Bolzano</span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Train to <b>Merano</b> (nap) · drop bags · walk to <b>Therme Meran</b><em>~2 hours in the outdoor pools · kids' pool with sprinklers + slide</em></span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Picnic dinner on the Passer · market food from Pur Südtirol</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Transfer day, Dolomites → Merano. Check out, bus to Bolzano, leave bags at the station Kipoint locker. Morning detour by bus 180 to Lago di Carezza/Karersee — 20-min flat fenced loop. Back to Bolzano, lunch, train to Merano (~40 min, naps). Optional afternoon at Trauttmansdorff Gardens — kid-friendly with animal trails (skip if tired, easy to do another Merano day). Picnic dinner on the Passer promenade with a playground stop.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 5 minimap">
+          <span class="minimap-label">Day 5 · alps → emerald lake → home base</span>
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="120" x2="550" y2="120" stroke="#a64822" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.7"/>
+            <g><circle cx="50" cy="120" r="4.5" fill="#a64822"/><text x="50" y="145" font-family="DM Mono" font-size="10" text-anchor="middle">Castelrotto</text><text x="50" y="105" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">07:30</text></g>
+            <g><circle cx="180" cy="120" r="4.5" fill="#a64822"/><text x="180" y="145" font-family="DM Mono" font-size="10" text-anchor="middle">Bolzano</text><text x="180" y="105" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~08:30</text></g>
+            <path d="M 180 115 Q 280 70 380 105" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="295" cy="70" r="5" fill="#2c5466"/><text x="295" y="52" font-family="DM Mono" font-size="10" text-anchor="middle">Carezza</text><text x="295" y="40" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">emerald lake · 20m loop</text></g>
+            <g><circle cx="395" cy="120" r="4.5" fill="#a64822"/><text x="395" y="145" font-family="DM Mono" font-size="10" text-anchor="middle">Bolzano</text><text x="395" y="105" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~13:00</text></g>
+            <g><circle cx="550" cy="120" r="7" fill="#7a3219"/><text x="550" y="145" font-family="DM Mono" font-size="11" font-weight="500" text-anchor="middle">MERANO</text><text x="550" y="105" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~14:30 · 4 nights</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Bus Castelrotto <span class="arrow">→</span> Bolzano <span class="dur">~50m</span>
@@ -626,44 +1097,71 @@
           <span class="dot">·</span>
           Train Bolzano <span class="arrow">→</span> Merano <span class="dur">~40m, deep nap</span>
         </div>
+        <p class="sched-note">SAD bus 180 Bolzano↔Karersee runs ~hourly summer (8:10, 9:10, 10:10 outbound — verify Apr 2026). Trenitalia Bolzano↔Merano regional ~half-hourly 5:00–22:00.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">7:30</div><div class="body">Check out Castelrotto. Bus to Bolzano (~50 min).</div></div>
-          <div class="block"><div class="time">8:30</div><div class="body">Bolzano station — drop bags at <strong>Kipoint storage</strong> (~€5/bag).</div></div>
-          <div class="block"><div class="time">9:00</div><div class="body">Bus 180 Bolzano → <strong>Lago di Carezza / Karersee</strong> (~50 min).</div></div>
-          <div class="block"><div class="time">10:00 – 11:30</div><div class="body">Walk the 20-min flat fenced loop — emerald water, Latemar reflection, picnic on a bench.</div></div>
+          <div class="block"><div class="time">7:00</div><div class="body">Wake. Check out Castelrotto. Quick breakfast or cornetti to go.</div></div>
+          <div class="block"><div class="time">7:30</div><div class="body">Bus SAD 170 Castelrotto → <a class="place-link" href="https://www.google.com/maps/place/Bolzano+bus+terminal" target="_blank" rel="noopener">Bolzano</a> (~50 min).</div></div>
+          <div class="block"><div class="time">8:30</div><div class="body">Bolzano station — drop bags at <a class="place-link" href="https://www.google.com/maps/search/Kipoint+Bolzano/" target="_blank" rel="noopener"><strong>Kipoint storage</strong></a> (~€5/bag).</div></div>
+          <div class="block"><div class="time">9:10</div><div class="body">Bus 180 Bolzano → <a class="place-link" href="https://www.google.com/maps/place/Lago+di+Carezza" target="_blank" rel="noopener"><strong>Lago di Carezza / Karersee</strong></a> (~50 min).</div></div>
+          <div class="block"><div class="time">10:00 – 11:30</div><div class="body">Walk the 20-min flat fenced loop — emerald water, Latemar reflection. Bench picnic with leftover bakery.</div></div>
           <div class="block"><div class="time">11:30</div><div class="body">Bus 180 back to Bolzano.</div></div>
-          <div class="block"><div class="time">12:30</div><div class="body">Quick lunch at a Bolzano café. Pick up bags.</div></div>
-          <div class="block nap"><div class="time">13:45 – 14:25</div><div class="body">Train Bolzano → Merano (~40 min, nap).</div></div>
-          <div class="block"><div class="time">14:30</div><div class="body">Arrive Merano. Walk or quick taxi to hotel. Settle.</div></div>
-          <div class="block"><div class="time">15:30</div><div class="body">Walk or shuttle to <strong>Trauttmansdorff Castle Gardens</strong> (south edge of Merano).</div></div>
-          <div class="block"><div class="time">16:00 – 19:00</div><div class="body">Trauttmansdorff — 80 themed gardens, animal trails, the Sissi castle, panoramic platform. Closes 19:00, last entry 18:00. Pre-book online to skip the queue.</div></div>
-          <div class="block"><div class="time">20:00</div><div class="body">Dinner in Merano old town.</div></div>
+          <div class="block"><div class="time">12:30</div><div class="body"><b>Lunch — the main meal</b> in Bolzano. Pick up bags after. (See meals below.)</div></div>
+          <div class="block nap"><div class="time">13:45 – 14:25</div><div class="body">Train Bolzano → <a class="place-link" href="https://www.google.com/maps/place/Merano+railway+station" target="_blank" rel="noopener">Merano</a> (~40 min, nap).</div></div>
+          <div class="block"><div class="time">14:30</div><div class="body">Arrive Merano. Walk or 5-min taxi to the apartment. Drop bags. Pack swim things.</div></div>
+          <div class="block"><div class="time">16:00 – 18:30</div><div class="body">Walk ~10 min to <a class="place-link" href="https://www.termemerano.it/en/" target="_blank" rel="noopener"><strong>Therme Meran</strong></a>. Two hours in the 11 outdoor pools · kids' pool with sprinklers + slide · big lawn for in-between. <span class="hours">pools close 19:00 · family ticket not sold during school holidays · plan ~€70 for the four of us</span></div></div>
+          <div class="block"><div class="time">18:45</div><div class="body">Walk home via the <a class="place-link" href="https://www.google.com/maps/search/Spielplatz+Sissi+Park+Meran/" target="_blank" rel="noopener">Sissi Park playground</a> — first read on what Merano playgrounds look like.</div></div>
+          <div class="block"><div class="time">19:00 – 19:30</div><div class="body">Picnic dinner on a river bench · market food from Pur Südtirol or panificio.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          <b>Forsterbräu Centrale</b> — Forst beer hall in Merano old town, family-friendly, classic Tyrolean. Or <b>Sigmund</b> for a more local feel.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Hotel breakfast in Castelrotto OR to-go from <a class="place-link" href="https://www.google.com/maps/search/Bäckerei+Castelrotto/" target="_blank" rel="noopener">bakery</a>; second breakfast snack at Carezza or on the bus.</div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body">In Bolzano: <b><a class="place-link" href="https://www.google.com/maps/search/Vögele+Bolzano/" target="_blank" rel="noopener">Gasthaus Vögele</a></b> — historic stube, full veg menu including spinach knödel + cheese knödel + a wild-herb plate. Or <b><a class="place-link" href="https://www.google.com/maps/search/Hopfen+und+Co+Bolzano/" target="_blank" rel="noopener">Hopfen & Co</a></b> for beer-garden energy with kids. <span class="veg">strong veg</span> <span class="meat-ok">classic Tyrolean</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · picnic</div>
+            <div class="meal-body">First Merano evening: pick up market food from <a class="place-link" href="https://www.google.com/maps/search/Pur+Südtirol+Merano/" target="_blank" rel="noopener">Pur Südtirol</a> (mountain cheese, schüttelbrot, speck, tomatoes, apricot nectar) and eat on a bench on the Passer promenade as the river runs past. <span class="veg">veg-easy</span> <span class="market">market</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">If everyone's flat by Merano</span>
+          <p><b>Skip Therme tonight.</b> Walk the Passer, gelato, early picnic dinner. Therme works any other Merano day.</p>
+          <p><b>If the morning runs late:</b> drop Carezza and go straight Castelrotto → Bolzano → Merano. The 20-min Carezza loop can fit another day from Bolzano if we miss it.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
-          An emerald lake that looks like a fairytale, then 80 gardens with animal trails and Sissi's castle.
+          An emerald lake that looks like a fairytale, then a kids' pool with sprinklers and slides at the Therme.
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-06">
+  <summary>
+    <span class="s-num">Day 06</span>
+    <span class="s-date">Tue 30 Jun</span>
+    <span class="s-text">Cycle through orchards to Pfefferlechner's farm<small>Merano · Bike day</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 06</div>
         <div class="day-date"><span class="month">Jun</span>30</div>
         <div class="day-name">Tuesday</div>
-        <span class="day-tag">Merano · Bike day</span>
+        <span class="day-tag">Merano · Tirolo + pizza</span>
       </header>
       <div class="day-body">
-        <h3 class="day-headline">Cycle through orchards to Pfefferlechner's farm.</h3>
-        <p class="day-intro">The Etschtalradweg is one of the great kid bike paths of Europe — flat, dedicated, dappled with apple trees. The destination is a working farm-brewery with goats and chickens roaming the courtyard.</p>
+        <h3 class="day-headline">Tirolo afternoon, soulful pizza in town.</h3>
+        <p class="day-intro">A slow morning, then a short bus up to Tirolo — orchards, a stations-of-the-cross promenade, the original seat-of-Tyrol castle. Back in Merano for proper Neapolitan pizza at the city's pizza destination.</p>
 
         <div class="gallery">
           <figure class="photo photo-hero">
@@ -695,45 +1193,101 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">Slow morning · Pur Südtirol for breakfast or grocery shop<em>Walk the Passer · playground · maybe a school peek</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what">Light at the apartment or in town</span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Bus 221 up to <b>Tirolo</b><em>Falknerpromenade through orchards · Schloss Tirol courtyard · valley views</em></span></div>
+          <div class="flow-row"><span class="flow-when">Dinner</span><span class="flow-what"><b>Soulfood · Pizza Pane Vino</b> — Merano's serious pizza<em>Lievito madre sourdough · Gambero Rosso 2 Spicchi · opens 18:00</em></span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Bike day from Merano. Pick up bikes + double child trailer at Sportler (pre-booked), out on the Etschtalradweg — flat dedicated cycle path ~12 km through apple orchards to Lana. Lunch at Pfefferlechner Keller, a working farm-brewery with chickens/pigs in the courtyard. Ride back (kids nap in trailer) or train Lana-Burgstall→Merano if anyone's done. Evening: Passer promenade walk with playground + school peek, cook at the apartment.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 6 minimap">
+          <span class="minimap-label">Day 6 · Merano → Lana on the Etschtalradweg · 12 km flat</span>
+          <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 40 90 Q 200 60 580 90" stroke="#4a5d3a" stroke-width="14" fill="none" opacity="0.18"/>
+            <path d="M 40 90 Q 200 70 580 90" stroke="#a64822" stroke-width="1.5" stroke-dasharray="4,3" fill="none" opacity="0.8"/>
+            <g><circle cx="40" cy="90" r="6" fill="#7a3219"/><text x="40" y="115" font-family="DM Mono" font-size="10" text-anchor="middle">MERANO</text><text x="40" y="65" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">Sportler bikes</text></g>
+            <g><circle cx="580" cy="90" r="6" fill="#a64822"/><text x="580" y="115" font-family="DM Mono" font-size="10" text-anchor="middle">Lana</text><text x="580" y="65" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">Pfefferlechner farm</text></g>
+            <text x="310" y="135" font-family="Cormorant Garamond" font-style="italic" font-size="12" fill="#3d3a35" text-anchor="middle">~12 km · ~1h with trailer · all flat · orchards both sides</text>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Bike + double trailer · Etschtalradweg Merano <span class="arrow">↔</span> Lana <span class="dur">~12 km each way, flat</span>
           <span class="dot">·</span>
           Train backup Lana-Burgstall <span class="arrow">→</span> Merano <span class="dur">~10m</span>
         </div>
+        <p class="sched-note">Sportler Merano opens 9:00 — pre-book the trailer 2-3 days ahead. Lana–Burgstall train (Vinschger Bahn) every 30 min; bikes go on board free.</p>
+
+        <div class="travel-row mono">
+          <span class="label">TRANSPORT</span>
+          Walk to bus station
+          <span class="dot">·</span>
+          Bus 221 Merano <span class="arrow">↔</span> Tirolo <span class="dur">~15m, every 30m</span>
+        </div>
+        <p class="sched-note">Bus 221 (NOT 222 — that's a chairlift route). Runs 6:30–~22:00. Soulfood opens 18:00.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">8:00</div><div class="body">Walk to <strong>Sportler Merano</strong> (Galileistrasse). Pick up the pre-booked bikes + <strong>double child trailer</strong>.</div></div>
-          <div class="block"><div class="time">9:00</div><div class="body">Onto the <strong>Etschtalradweg</strong> — flat, dedicated, through apple orchards alongside the Adige.</div></div>
-          <div class="block"><div class="time">10:30</div><div class="body">Arrive Lana.</div></div>
-          <div class="block"><div class="time">11:00 – 13:00</div><div class="body"><strong>Pfefferlechner Keller</strong> — working farm with its own micro-brewery. Goats, chickens, pigs roaming the courtyard. Kasspatzln, würstel, fresh speck, all from the farm. Tables under chestnut trees.</div></div>
-          <div class="block nap"><div class="time">13:00 – 14:00</div><div class="body">Cycle back along the orchards — kids nap in the trailer. Or take the train Lana-Burgstall → Merano (~10 min) and skip the return ride.</div></div>
-          <div class="block"><div class="time">14:00</div><div class="body">Back at hotel, transfer to bed for the rest of nap.</div></div>
-          <div class="block"><div class="time">16:00</div><div class="body">Wake. Easy hotel time.</div></div>
-          <div class="block"><div class="time">17:00 – 19:00</div><div class="body">Walk the <strong>Passer river promenade</strong> through Sissi Park. Gelato in the old-town arcades.</div></div>
-          <div class="block"><div class="time">19:30</div><div class="body">Dinner outside in the arcades.</div></div>
-          <div class="block"><div class="time">Bonus</div><div class="body"><div class="bonus"><b>If Pfefferlechner is closed Tuesday</b>Backup: <strong>Hofschank Larcherhof</strong> in Lana, or <strong>Buschenschank Brunner</strong> in Pavicolo. Both farm-tavern feel, both in the Lana cluster — keep the bike-to-Lana logic intact.</div></div></div>
+          <div class="block"><div class="time">8:00</div><div class="body">Slow morning · coffee + cornetti at a Passer café · maybe a grocery shop at <a class="place-link" href="https://www.google.com/maps/search/Pur+Südtirol+Merano/" target="_blank" rel="noopener">Pur Südtirol</a> for the apartment.</div></div>
+          <div class="block"><div class="time">10:00 – 12:00</div><div class="body">Playground · walk past the <a class="place-link" href="https://www.google.com/maps/search/Grundschule+Maria+Trost+Meran/" target="_blank" rel="noopener">Grundschule Maria Trost</a> or <a class="place-link" href="https://www.google.com/maps/search/Freie+Waldorfschule+Meran/" target="_blank" rel="noopener">Waldorfschule</a> for a school peek.</div></div>
+          <div class="block"><div class="time">12:00 – 13:00</div><div class="body">Light lunch at the apartment or grazing at Pur Südtirol.</div></div>
+          <div class="block nap"><div class="time">13:00 – 15:00</div><div class="body">Naps.</div></div>
+          <div class="block"><div class="time">15:30</div><div class="body">Bus 221 from Merano station up to <a class="place-link" href="https://www.google.com/maps/place/Tirolo,+BZ" target="_blank" rel="noopener"><strong>Tirolo</strong></a> (~15 min).</div></div>
+          <div class="block"><div class="time">16:00 – 17:30</div><div class="body">Walk the <a class="place-link" href="https://www.google.com/maps/search/Falknerpromenade+Tirolo/" target="_blank" rel="noopener"><strong>Falknerpromenade</strong></a> — 5 km flat panoramic path through working apple orchards. Stroller-friendly.</div></div>
+          <div class="block"><div class="time">17:30 – 18:00</div><div class="body"><a class="place-link" href="https://www.google.com/maps/place/Schloss+Tirol" target="_blank" rel="noopener"><strong>Castel Tirolo / Schloss Tirol</strong></a> grounds and courtyard. <span class="hours">museum 10:00–17:00 · courtyard always open</span></div></div>
+          <div class="block"><div class="time">18:00</div><div class="body">Bus 221 back to Merano. Walk to Soulfood (~10 min from station via the Portici).</div></div>
+          <div class="block"><div class="time">18:30 – 20:00</div><div class="body"><a class="place-link" href="https://soulfood.bz/" target="_blank" rel="noopener"><strong>Soulfood · Pizza Pane Vino</strong></a> — long-fermentation sourdough, Gambero Rosso 2 Spicchi. WhatsApp ahead: +39 328 179 6123. <span class="hours">opens 18:00 · closed Wed</span></div></div>
+          <div class="block"><div class="time">20:30</div><div class="body">Kids in bed.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          <b>Kallmünz</b> for modern Tyrolean in a piazza setting, or <b>Imbiss 56</b> for casual street food the kids will eat.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Out at a café: <a class="place-link" href="https://www.google.com/maps/search/Café+Darling+Merano/" target="_blank" rel="noopener">Café Darling</a> or <a class="place-link" href="https://www.google.com/maps/search/Café+Wandelhalle+Merano/" target="_blank" rel="noopener">Café Wandelhalle</a> on the Passer — cappuccino + cornetti + yogurt-fruit bowl for the girls. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · light</div>
+            <div class="meal-body">At the apartment or a quick graze at <a class="place-link" href="https://www.google.com/maps/search/Pur+Südtirol+Merano/" target="_blank" rel="noopener">Pur Südtirol</a>. Save the appetite for pizza dinner. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · the special one</div>
+            <div class="meal-body"><b><a class="place-link" href="https://soulfood.bz/" target="_blank" rel="noopener">Soulfood · Pizza Pane Vino</a></b>, Via Piave 50 — Merano's only Gambero Rosso–listed pizzeria. Lievito madre sourdough, in-house Backificio bakery, contemporary toppings. <em>WhatsApp +39 328 179 6123 to book + ask for 2 seggioloni.</em> <em>Backup: <a class="place-link" href="https://357.plateform.app/welcome" target="_blank" rel="noopener">357 Trecinquesette</a> on Via Plankenstein — also Gambero-listed, same opening time.</em> <span class="veg">veg-easy</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">Flex</span>
+          <p><b>If Tirolo is rained out:</b> stay in Merano, do Trauttmansdorff this afternoon instead (move Wed's gardens slot to today), still keep the pizza dinner.</p>
+          <p><b>If energy crashes after the Falknerpromenade:</b> skip Schloss Tirol courtyard and catch an earlier bus back — Soulfood opens 18:00 so you've got buffer.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
           <ul>
-            <li>cycling under apple trees in a trailer they can nap in</li>
-            <li>goats, chickens, pigs running the courtyard</li>
-            <li>farm food at a farm — kasspatzln + würstel</li>
-            <li>a riverside walk in town with gelato</li>
+            <li>a bus that climbs up a mountain to a castle</li>
+            <li>walking through apple orchards on a panoramic path</li>
+            <li>a castle courtyard to run in</li>
+            <li>real Italian pizza — the kind they love</li>
           </ul>
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-07">
+  <summary>
+    <span class="s-num">Day 07</span>
+    <span class="s-date">Wed 01 Jul</span>
+    <span class="s-text">Cable car up at sunrise, sunset on the Tappeiner<small>Merano · Mountain day</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 07</div>
         <div class="day-date"><span class="month">Jul</span>01</div>
@@ -741,8 +1295,8 @@
         <span class="day-tag">Merano · Mountain day</span>
       </header>
       <div class="day-body">
-        <h3 class="day-headline">Cable car up at sunrise, sunset on the Tappeiner.</h3>
-        <p class="day-intro">A glass-cabin gondola lifts you to a mountain playground with in-ground trampolines and an alpine coaster. Afternoon: a flat panoramic walk above Merano, golden hour over the rooftops.</p>
+        <h3 class="day-headline">Cable car morning, gardens afternoon.</h3>
+        <p class="day-intro">Glass-cabin gondola to a mountain playground with trampolines and an alpine coaster. After naps: Trauttmansdorff Gardens — 80 themed gardens with animal trails and the Sissi castle.</p>
 
         <div class="gallery">
           <figure class="photo photo-hero">
@@ -774,6 +1328,30 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what"><b>Funivia Merano 2000</b> — glass-cabin gondola to 1900 m<em>Outdoor kids' camp · Alpin Bob coaster (3yo can ride with adult · under-4s can't ride)</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what">Meadow hut at the top</span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Naps · then <b>Trauttmansdorff Gardens</b><em>80 themed gardens · animal trails · the Sissi castle · last entry 18:00</em></span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Light dinner near home · Tappeiner sunset walk if energy</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Mountain day. Funivia Merano 2000 from the valley station (~7 min, glass cabin) up to 1900 m. Kids' play area: in-ground trampolines, zip line, parkour. Alpin Bob alpine coaster (3yo with adult). Lunch at a meadow hut. Down, naps. Afternoon walk on the Tappeiner promenade ~5 km, stroller-friendly, with a detour past the Waldorfschule and a stop at Kurpark playground.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 7 minimap">
+          <span class="minimap-label">Day 7 · up the mountain · down for sunset</span>
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 40 180 L 200 60 L 360 180" stroke="#4a5d3a" stroke-width="1" fill="#4a5d3a" opacity="0.18"/>
+            <line x1="100" y1="160" x2="170" y2="80" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3"/>
+            <g><circle cx="100" cy="160" r="5" fill="#a64822"/><text x="100" y="200" font-family="DM Mono" font-size="10" text-anchor="middle">Merano</text><text x="100" y="213" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">valley station</text></g>
+            <g><circle cx="170" cy="80" r="5" fill="#a64822"/><text x="170" y="60" font-family="DM Mono" font-size="10" text-anchor="middle">Merano 2000</text><text x="170" y="48" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">1900 m · 7 min gondola</text></g>
+            <path d="M 380 180 Q 440 100 580 80" stroke="#a64822" stroke-width="0.9" stroke-dasharray="6,3" fill="none"/>
+            <g><circle cx="380" cy="180" r="5" fill="#a64822"/><text x="380" y="200" font-family="DM Mono" font-size="10" text-anchor="middle">Old town</text></g>
+            <g><circle cx="580" cy="80" r="5" fill="#a64822"/><text x="580" y="60" font-family="DM Mono" font-size="10" text-anchor="middle">Tappeiner</text><text x="580" y="48" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">5 km · sunset walk</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Walk/bus to Merano 2000 valley station
@@ -782,22 +1360,40 @@
           <span class="dot">·</span>
           Walk to Tappeiner from old town
         </div>
+        <p class="sched-note">Funivia Merano 2000: continuous 9:00–18:00 summer · €30/adult round-trip, kids reduced. Tappeiner promenade open all hours; entrances at Pulverturm + Gilf.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">8:00</div><div class="body">Walk or short bus to the <strong>Funivia Merano 2000</strong> valley station (Merano center).</div></div>
-          <div class="block"><div class="time">8:30</div><div class="body">Cable car up — 7 min ride, two cabins of 120, panoramic glass.</div></div>
-          <div class="block"><div class="time">9:00 – 12:30</div><div class="body">At ~1900 m. <strong>Outdoor Kids Camp</strong> playground (in-ground trampolines, double zip line, parkour, wooden ball runs). <strong>Alpin Bob</strong> alpine coaster — 3-year-old can ride with an adult. Hut lunch on the meadow.</div></div>
-          <div class="block"><div class="time">12:45</div><div class="body">Cable car down.</div></div>
-          <div class="block nap"><div class="time">13:30 – 15:30</div><div class="body">Naps at the hotel.</div></div>
-          <div class="block"><div class="time">16:00</div><div class="body">Walk up to the <strong>Tappeiner Promenade</strong> (entrance from Pulverturm or Gilf, both ~10 min from old town).</div></div>
-          <div class="block"><div class="time">16:00 – 19:30</div><div class="body">Walk the Tappeiner — flat panoramic path along the hillside, mediterranean planting, cafés along the way, sunset over Merano. ~5 km, totally stroller-friendly.</div></div>
-          <div class="block"><div class="time">20:00</div><div class="body">Dinner in old town.</div></div>
+          <div class="block"><div class="time">8:00</div><div class="body">Breakfast in town. Walk to the <a class="place-link" href="https://www.google.com/maps/place/Funivia+Merano+2000" target="_blank" rel="noopener"><strong>Funivia Merano 2000</strong></a> valley station.</div></div>
+          <div class="block"><div class="time">9:00</div><div class="body">Cable car up — 7 min, glass cabin. <span class="hours">first car 9:00</span></div></div>
+          <div class="block"><div class="time">9:30 – 12:00</div><div class="body">At ~1900 m. <a class="place-link" href="https://www.google.com/maps/search/Outdoor+Kids+Camp+Merano+2000/" target="_blank" rel="noopener"><strong>Outdoor Kids Camp</strong></a> playground (in-ground trampolines, parkour, wooden ball runs). <a class="place-link" href="https://www.meran2000.com/en/summer/alpin-bob/" target="_blank" rel="noopener"><strong>Alpin Bob</strong></a> coaster — 3yo rides free with adult (under 4 can NOT ride, so only one kid on the coaster).</div></div>
+          <div class="block"><div class="time">12:00 – 13:00</div><div class="body"><b>Lunch — the main meal</b> at a meadow hut. (See meals.)</div></div>
+          <div class="block"><div class="time">13:00</div><div class="body">Cable car down.</div></div>
+          <div class="block nap"><div class="time">13:30 – 15:30</div><div class="body">Naps at the apartment.</div></div>
+          <div class="block"><div class="time">16:00</div><div class="body">Walk or taxi to <a class="place-link" href="https://www.trauttmansdorff.it/en/" target="_blank" rel="noopener"><strong>Trauttmansdorff Castle Gardens</strong></a> (south edge of Merano · ~25-min stroller walk along the Passer, or 8-min taxi).</div></div>
+          <div class="block"><div class="time">16:00 – 19:00</div><div class="body">Trauttmansdorff — 80 themed gardens, animal trails (parrots, koi ponds, sensory garden), the Sissi castle, panoramic platform. <span class="hours">9:00–19:00 · last entry 18:00 · family ticket €21</span> Pre-book timed entry online.</div></div>
+          <div class="block"><div class="time">19:00 – 19:30</div><div class="body">Walk back via the Passer. Picnic dinner on a river bench, or quick stop at <a class="place-link" href="https://www.google.com/maps/search/Pur+Südtirol+Merano/" target="_blank" rel="noopener">Pur Südtirol</a> for graze-style takeaway.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          <b>Sigmund</b> for traditional Tyrolean off the tourist track, or <b>Pur Südtirol</b> deli/restaurant for grazing on mountain charcuterie + cheese.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Cappuccino + cornetti at any Merano café (<a class="place-link" href="https://www.google.com/maps/search/Café+König+Merano/" target="_blank" rel="noopener">Café König</a> opens 7:00 and is a local-institution). <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body">Meadow hut at Merano 2000: <a class="place-link" href="https://www.google.com/maps/search/Bergrestaurant+Kuhleiten/" target="_blank" rel="noopener">Bergrestaurant Kuhleiten</a> or <a class="place-link" href="https://www.google.com/maps/search/Waldschenke+Merano+2000/" target="_blank" rel="noopener">Waldschenke</a> — schlutzkrapfen, cheese knödel, wild herb salad for Rina; speck + würstel platter for Raul. Strudel under a parasol. <span class="veg">strong veg</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · light</div>
+            <div class="meal-body">Picnic on the Passer with leftovers from Pur Südtirol — mountain charcuterie, cheese, herb pesto, peaches. Or a quick Tappeiner sunset walk on the way home. <span class="veg">veg-easy</span> <span class="market">local producers</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">Backup if the gondola's closed for wind</span>
+          <p><b>Stay in town:</b> <a class="place-link" href="https://www.google.com/maps/search/Kurpark+Merano/" target="_blank" rel="noopener">Kurpark playground</a> + arcades · river splash at <a class="place-link" href="https://www.google.com/maps/search/Lido+Merano/" target="_blank" rel="noopener">Lido Merano</a> if hot. Trauttmansdorff still works as the afternoon anchor.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
@@ -805,23 +1401,31 @@
             <li>cable car with a full-glass cabin</li>
             <li>in-ground trampolines</li>
             <li>alpine coaster (with an adult)</li>
-            <li>walking high above the town at sunset</li>
+            <li>animal trails and a Sissi-castle in a garden</li>
           </ul>
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-08">
+  <summary>
+    <span class="s-num">Day 08</span>
+    <span class="s-date">Thu 02 Jul</span>
+    <span class="s-text">Thermal pools at opening, orchards at sunset<small>Merano · Spa + Tirolo</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 08</div>
         <div class="day-date"><span class="month">Jul</span>02</div>
         <div class="day-name">Thursday</div>
-        <span class="day-tag">Merano · Spa + Tirolo</span>
+        <span class="day-tag">Merano · Bike day</span>
       </header>
       <div class="day-body">
-        <h3 class="day-headline">Thermal pools at opening, orchards at sunset.</h3>
-        <p class="day-intro">Three hours at Therme Meran — kids' pool with sprinklers and a slide. Afternoon: bus 222 up to Tirolo, walk the Falknerpromenade through working orchards, sunset Buschenschank dinner.</p>
+        <h3 class="day-headline">Cycle through orchards to Götzfried's farm.</h3>
+        <p class="day-intro">The Etschtalradweg — flat, dedicated, twelve kilometres of apple trees. Lunch at a working farm with a petting zoo and a kids' playground in the garden. Evening: cook at home from yesterday's market.</p>
 
         <div class="gallery">
           <figure class="photo photo-hero">
@@ -853,44 +1457,95 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">Bikes + double trailer from Sportler · ride the <b>Etschtalradweg</b> to Lana<em>Flat, dedicated, 12 km through apple orchards</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what"><b>Götzfried Keller</b> · Lana<em>Petting zoo + kids' playground · garden seating · free shuttle from Lana center (call ahead)</em></span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Cycle back along the orchards (kids nap in trailer)</span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Cook at the apartment from yesterday's market<em>Balcony · river running past</em></span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Spa morning at Therme Meran — 11 outdoor pools including a kids' pool with sprinklers + slide. ~3 hours. Walk home for an apartment lunch + naps. Afternoon: bus 222 up to Tirolo, walk the Falknerpromenade through orchards (5 km flat, stroller OK), Schloss Tirol courtyard. Evening: the trip's one sit-down dinner at a Tirolo Buschenschank (farm tavern, sunset views). Last bus ~21:00 — kids slightly past bedtime; one exception accepted.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 8 minimap">
+          <span class="minimap-label">Day 8 · spa morning · orchard sunset</span>
+          <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+            <g><circle cx="80" cy="120" r="6" fill="#2c5466"/><text x="80" y="145" font-family="DM Mono" font-size="10" text-anchor="middle">Therme Meran</text><text x="80" y="158" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">9:00–12:00</text></g>
+            <path d="M 90 115 Q 200 80 300 100" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="300" cy="100" r="6" fill="#a64822"/><text x="300" y="125" font-family="DM Mono" font-size="10" text-anchor="middle">Merano old town</text><text x="300" y="138" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">lunch + nap</text></g>
+            <path d="M 320 95 Q 420 60 540 70" stroke="#a64822" stroke-width="0.9" stroke-dasharray="6,3" fill="none"/>
+            <g><circle cx="540" cy="70" r="6" fill="#a64822"/><text x="540" y="50" font-family="DM Mono" font-size="10" text-anchor="middle">Tirolo · Schloss</text><text x="540" y="38" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">bus 222 · 15m</text><text x="540" y="92" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">sunset Buschenschank</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
-          Walk to Therme Meran (in town center)
+          Bike + double trailer · Etschtalradweg Merano <span class="arrow">↔</span> Lana <span class="dur">~12 km each way, flat</span>
           <span class="dot">·</span>
-          Bus 222 Merano station <span class="arrow">↔</span> Tirolo <span class="dur">~15m, every ~30m</span>
+          Götzfried free shuttle from Lana center <span class="dur">~5 min</span>
+          <span class="dot">·</span>
+          Train backup Lana-Burgstall <span class="arrow">→</span> Merano <span class="dur">~10m</span>
         </div>
+        <p class="sched-note">Sportler / Sportservice rental at Palamainardo (Viale Europa) opens 9:00. Pre-book the double trailer at rentandgo.it. Call Götzfried before to arrange the shuttle pickup at Lana center / station.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">9:00</div><div class="body"><strong>Therme Meran</strong> opens. Be there at the door — less crowded.</div></div>
-          <div class="block"><div class="time">9:00 – 12:00</div><div class="body">11 outdoor pools, Bio Nature Pool (sun-heated, lily-pond style), kids' pool with mini slide and sprinklers, big lawn. €30–35/adult, kids reduced.</div></div>
-          <div class="block"><div class="time">12:30</div><div class="body">Lunch at the spa self-service or back in old town.</div></div>
-          <div class="block nap"><div class="time">13:30 – 15:30</div><div class="body">Naps.</div></div>
-          <div class="block"><div class="time">15:30</div><div class="body">Bus 222 from Merano station up to <strong>Tirolo</strong> (~15 min).</div></div>
-          <div class="block"><div class="time">16:00 – 17:30</div><div class="body">Walk the <strong>Falknerpromenade</strong> — 5 km flat panoramic path through working apple orchards. Stroller-friendly.</div></div>
-          <div class="block"><div class="time">17:30 – 18:30</div><div class="body"><strong>Castel Tirolo / Schloss Tirol</strong> grounds and courtyard (museum closes 17:00 in summer; the views and approach are still beautiful after).</div></div>
-          <div class="block"><div class="time">19:00 – 20:30</div><div class="body"><strong>Buschenschank dinner</strong> in Tirolo — sunset over the Merano valley.</div></div>
-          <div class="block"><div class="time">21:00</div><div class="body">Bus 222 back to Merano (verify last bus before).</div></div>
+          <div class="block"><div class="time">8:00</div><div class="body">Breakfast at a Merano café · walk to <a class="place-link" href="https://www.rentandgo.it/" target="_blank" rel="noopener"><strong>Sportler / Sportservice</strong></a> at Palamainardo (NOT Galileistrasse). Pick up bikes + double child trailer. <span class="hours">opens 9:00</span></div></div>
+          <div class="block"><div class="time">9:15</div><div class="body">Onto the <a class="place-link" href="https://www.google.com/maps/dir/Merano/Lana,+BZ/" target="_blank" rel="noopener"><strong>Etschtalradweg</strong></a> — flat, dedicated, apple orchards alongside the Adige.</div></div>
+          <div class="block"><div class="time">10:45</div><div class="body">Arrive <a class="place-link" href="https://www.google.com/maps/place/Lana,+BZ" target="_blank" rel="noopener">Lana</a>. Park bikes at the train station bike rack · take Götzfried's shuttle up to the farm (pre-arranged).</div></div>
+          <div class="block"><div class="time">11:30 – 13:30</div><div class="body"><b>Lunch — the main meal</b> at <a class="place-link" href="https://www.goetzfried.it/" target="_blank" rel="noopener"><strong>Götzfried Keller</strong></a>. Garden seating · petting zoo and kids' playground on the property. <span class="hours">kitchen 12:00–14:00 · closed Tue</span> Call ahead +39 0473 562 772 to reserve + confirm vegetarian mains.</div></div>
+          <div class="block"><div class="time">13:45</div><div class="body">Götzfried shuttle back down to Lana · pick up bikes.</div></div>
+          <div class="block nap"><div class="time">14:00 – 15:00</div><div class="body">Cycle back along the orchards — kids nap in the trailer. <em>Or take the Vinschger Bahn Lana-Burgstall → Merano (~10 min); bikes go on free.</em></div></div>
+          <div class="block"><div class="time">15:00</div><div class="body">Back at the apartment, transfer to bed for the rest of nap.</div></div>
+          <div class="block"><div class="time">17:00 – 19:00</div><div class="body">Slow evening at the apartment. Maybe the Tappeiner Promenade for sunset if energy.</div></div>
+          <div class="block"><div class="time">19:00 – 19:30</div><div class="body"><strong>Cook at the apartment.</strong> Leftover Götzfried cheese, pasta with Friday-market tomatoes, salad. Balcony. <em>This is what a real Thursday here would look like.</em></div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Buschenschank pick</span>
-          <b>Hochmuth</b> in Tirolo (high above the village, sunset views) — speck, eggs, kasspatzln from the farm. Backups: <b>Egger</b> Tirolo or <b>Patleidhof</b> in Marlengo.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Café on the Passer · cornetti + cappuccino · pack snacks for the ride. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body"><b><a class="place-link" href="https://www.goetzfried.it/" target="_blank" rel="noopener">Götzfried Keller</a></b> · Ackpfeif 3, Lana — Buschenschank with knödel varieties, barley soup, asparagus dishes, cheese platters · house wines. Garden seating with kids' playground and petting zoo. <em>Call ahead to confirm 2+ vegetarian mains on the July menu (menu skews meat-heavy, but they accommodate).</em> +39 0473 562 772 <span class="veg">veg-good (call to confirm)</span> <span class="meat-ok">grill + farm meat</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · cook at home</div>
+            <div class="meal-body"><b>Cook at the apartment</b> from the Friday market (which we'll buy fresh next morning) or leftovers from Götzfried. Pasta + zucchini + cheese, salad, peaches. Balcony. <em>The "would we cook here" meal.</em> <span class="veg">veg-easy</span> <span class="market">market</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">Backups + flex</span>
+          <p><b>If Götzfried can't accommodate veg satisfactorily:</b> <a class="place-link" href="https://www.google.com/maps/search/Buschenschank+Brunner+Pavicolo/" target="_blank" rel="noopener">Buschenschank Brunner</a> in Pavicolo — same farm-tavern vibe, also hillside (call to verify shuttle + Thu lunch hours).</p>
+          <p><b>If kids resist the trailer:</b> ride one-way only — bike out to Lana for lunch, take the Vinschger Bahn back. Bikes ride on free.</p>
+          <p><b>Heads up:</b> Many other Lana farm-taverns are closed in July for owners' vacation (Hofstätterhof, Bauer am Stein, Larchwalderhof all closed early July). Götzfried is the verified summer option.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
           <ul>
-            <li>kids' pool with sprinklers and mini slide</li>
-            <li>walking through working apple orchards</li>
-            <li>a hilltop castle with a courtyard</li>
-            <li>sunset farm dinner from a real farm</li>
+            <li>cycling under apple trees in a trailer they can nap in</li>
+            <li>a petting zoo and playground at lunch</li>
+            <li>a shuttle ride up the hill</li>
+            <li>cooking dinner together on the balcony</li>
           </ul>
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-09">
+  <summary>
+    <span class="s-num">Day 09</span>
+    <span class="s-date">Fri 03 Jul</span>
+    <span class="s-text">Friday market at dawn, waterfall + Bastione at dusk<small>→ Riva del Garda</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 09</div>
         <div class="day-date"><span class="month">Jul</span>03</div>
@@ -931,33 +1586,78 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what"><b>Merano Friday market</b> · shop the picnic<em>Schüttelbrot, mountain cheese, peaches, flowers</em></span></div>
+          <div class="flow-row"><span class="flow-when">Midday</span><span class="flow-what">Trains Merano → Bolzano → Rovereto · bus to <b>Riva</b> (~3h, nap)<em>Picnic on the train</em></span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Bus to <b>Cascate del Varone</b> — gorge waterfall</span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Free elevator up to the <b>Bastione</b> · sunset over the lake</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Transfer day, Merano → Riva del Garda. Morning at the Merano Friday market (Piazza Prader, 8:00–13:00) — picnic supplies for the train. Check out, train Merano → Bolzano → Rovereto, bus Rovereto → Riva (~3h total, nap on the long leg). Arrive ~14:30. Afternoon: bus to Cascate del Varone (gorge waterfall, stroller-friendly boardwalks), back to Riva, free cliff elevator up to the Bastione for sunset, picnic dinner from the market.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 9 minimap">
+          <span class="minimap-label">Day 9 · market morning · 3 trains to Garda · waterfall + cliff sunset</span>
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="100" x2="560" y2="100" stroke="#a64822" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.7"/>
+            <g><circle cx="40" cy="100" r="5" fill="#7a3219"/><text x="40" y="125" font-family="DM Mono" font-size="10" text-anchor="middle">MERANO</text><text x="40" y="85" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">market 8:00</text></g>
+            <g><circle cx="200" cy="100" r="4.5" fill="#a64822"/><text x="200" y="125" font-family="DM Mono" font-size="9.5" text-anchor="middle">Bolzano</text><text x="200" y="85" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">12:40</text></g>
+            <g><circle cx="360" cy="100" r="4.5" fill="#a64822"/><text x="360" y="125" font-family="DM Mono" font-size="9.5" text-anchor="middle">Rovereto</text><text x="360" y="85" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~13:30</text></g>
+            <g><circle cx="560" cy="100" r="5" fill="#7a3219"/><text x="560" y="125" font-family="DM Mono" font-size="10" text-anchor="middle">RIVA</text><text x="560" y="85" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~14:30</text></g>
+            <path d="M 560 110 Q 510 170 460 165" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="455" cy="165" r="4" fill="#2c5466"/><text x="430" y="170" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="end">Cascate del Varone</text></g>
+            <path d="M 560 110 L 555 175" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="555" cy="180" r="4" fill="#a64822"/><text x="580" y="186" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35">Bastione sunset</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Train Merano <span class="arrow">→</span> Bolzano <span class="arrow">→</span> Rovereto <span class="dur">~1h20, deep nap</span>
           <span class="dot">·</span>
           Bus Rovereto <span class="arrow">→</span> Riva (Trentino Trasporti B205) <span class="dur">~50m</span>
         </div>
+        <p class="sched-note">Merano→Bolzano: regional ~half-hourly. Bolzano→Rovereto: hourly + Frecciarossa peaks. Trentino Trasporti B205 Rovereto FS station→Riva: ~hourly weekdays.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">7:30</div><div class="body">Walk to the <strong>Friday market on Piazza Prader / Via Mainardo</strong>.</div></div>
-          <div class="block"><div class="time">8:00</div><div class="body">Market opens. Buy picnic for the train: schüttelbrot, speck, mountain cheese, tomatoes, fruit, flowers.</div></div>
-          <div class="block"><div class="time">9:30</div><div class="body">Back at hotel, finalize packing.</div></div>
-          <div class="block"><div class="time">11:30</div><div class="body">Check out.</div></div>
+          <div class="block"><div class="time">7:30</div><div class="body">Walk to the <a class="place-link" href="https://www.google.com/maps/search/Friday+market+Merano+Piazza+Prader/" target="_blank" rel="noopener"><strong>Friday market on Piazza Prader / Via Mainardo</strong></a>.</div></div>
+          <div class="block"><div class="time">8:00 – 9:30</div><div class="body">Market opens. Picnic shop for the train: <em>schüttelbrot, speck, mountain cheese, tomatoes, peaches, apricots, flowers.</em> <span class="hours">market 8:00–13:00 Fri only</span></div></div>
+          <div class="block"><div class="time">10:00</div><div class="body">Back at hotel, finalize packing.</div></div>
+          <div class="block"><div class="time">11:30</div><div class="body">Check out · stroller picnic at the river before the train.</div></div>
           <div class="block"><div class="time">12:00</div><div class="body">Train Merano → Bolzano (~40 min).</div></div>
-          <div class="block nap"><div class="time">12:50 – 14:30</div><div class="body">Train Bolzano → Rovereto (~40 min) + bus Rovereto → Riva (~50 min) — deep nap.</div></div>
-          <div class="block"><div class="time">14:30</div><div class="body">Arrive Riva. Drop bags at hotel.</div></div>
-          <div class="block"><div class="time">15:00</div><div class="body">Bus Riva → <strong>Cascate del Varone</strong> (~15 min).</div></div>
-          <div class="block"><div class="time">15:30 – 17:00</div><div class="body">Cascate del Varone — the dramatic gorge waterfall. Boardwalks safe for stroller-age, mist on your face. Open 9:00 – 19:00, last entry 18:00.</div></div>
+          <div class="block nap"><div class="time">12:50 – 14:30</div><div class="body">Train Bolzano → <a class="place-link" href="https://www.google.com/maps/place/Rovereto+railway+station" target="_blank" rel="noopener">Rovereto</a> (~40 min) + bus Rovereto → Riva (~50 min) — deep nap.</div></div>
+          <div class="block"><div class="time">14:30</div><div class="body">Arrive <a class="place-link" href="https://www.google.com/maps/place/Riva+del+Garda" target="_blank" rel="noopener">Riva</a>. Drop bags at hotel.</div></div>
+          <div class="block"><div class="time">15:00</div><div class="body">Bus Riva → <a class="place-link" href="https://www.google.com/maps/place/Cascate+del+Varone" target="_blank" rel="noopener"><strong>Cascate del Varone</strong></a> (~15 min).</div></div>
+          <div class="block"><div class="time">15:30 – 17:00</div><div class="body">Cascate del Varone — gorge waterfall. Stroller-friendly boardwalks, mist on your face. <span class="hours">9:00–19:00 · last entry 18:00 · €6 adults</span></div></div>
           <div class="block"><div class="time">17:30</div><div class="body">Bus back to Riva.</div></div>
-          <div class="block"><div class="time">18:00</div><div class="body">Walk to <strong>Bastione di Riva</strong> — free elevator (10:00 – 19:00) or short hike up the hillside.</div></div>
-          <div class="block"><div class="time">18:30 – 19:45</div><div class="body">Sunset on the cliffs above Riva — panorama of the lake's north end.</div></div>
-          <div class="block"><div class="time">20:00</div><div class="body">Dinner.</div></div>
+          <div class="block"><div class="time">18:00</div><div class="body">Walk to <a class="place-link" href="https://www.google.com/maps/place/Bastione+di+Riva" target="_blank" rel="noopener"><strong>Bastione di Riva</strong></a> — free elevator. <span class="hours">elevator 10:00–19:00</span></div></div>
+          <div class="block"><div class="time">18:30 – 19:45</div><div class="body">Sunset on the cliffs above Riva. Picnic dinner from the morning's market on a bench overlooking the lake's north end.</div></div>
+          <div class="block"><div class="time">20:00</div><div class="body">Down to hotel. Kids in bed.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          <b>Antiche Mura</b> in Riva old town — local Trentino classics, outdoor tables. Or <b>Osteria Le Servite</b> just outside town for a more rustic farm-to-table feel.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Hotel breakfast in Merano — or stroller down to the market and graze: warm bread, fresh fruit, espresso from a stand. <span class="market">market</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body"><b>Picnic on the train</b> from the Friday market — schüttelbrot + cheese for Rina, speck for Raul, tomatoes + apricots + peaches for everyone. This is the lunch you will remember. <span class="veg">veg-easy</span> <span class="market">market</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · picnic</div>
+            <div class="meal-body">Leftover market food on the Bastione bench as the sun goes down. <em>If we want something hot:</em> grab pizza al taglio from <a class="place-link" href="https://www.google.com/maps/search/pizzeria+al+taglio+Riva+del+Garda/" target="_blank" rel="noopener">a pizzeria on Via Marocco</a> on the walk back. <span class="veg">veg-easy</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">Backups</span>
+          <p><b>If the kids are too tired for both:</b> drop Cascate del Varone, do only the Bastione (closer, free elevator, same sunset). The waterfall keeps until Day 10 afternoon if you want it.</p>
+          <p><b>If they're scared of the waterfall:</b> stay on the upper viewing platforms (much less mist + sound) and skip the inner cave path. Or skip entirely and walk straight to the Bastione.</p>
+          <p><b>If we miss the morning market:</b> Riva has a smaller daily market on Piazza Cavour 8:00–13:00 — same vibe, smaller scale.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
@@ -970,9 +1670,17 @@
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-10">
+  <summary>
+    <span class="s-num">Day 10</span>
+    <span class="s-date">Sat 04 Jul</span>
+    <span class="s-text">Bike to Torbole, swim at Lago di Tenno<small>Riva</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 10</div>
         <div class="day-date"><span class="month">Jul</span>04</div>
@@ -1013,33 +1721,77 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">Bike Riva → <b>Torbole</b> on the lakefront cycle path<em>Swim at Spiaggia Torbole · watch the windsurfers</em></span></div>
+          <div class="flow-row"><span class="flow-when">Lunch</span><span class="flow-what">Antiche Mura in Riva old town · Trentino classics</span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">Naps · bus up to <b>Lago di Tenno</b><em>Emerald alpine lake · swim, picnic on the small island</em></span></div>
+          <div class="flow-row"><span class="flow-when">Late afternoon</span><span class="flow-what">Walk to <b>Canale di Tenno</b> · medieval village wander</span></div>
+          <div class="flow-row"><span class="flow-when">Dinner</span><span class="flow-what"><b>Ristorante Sud</b> · Riva center · proper Neapolitan pizza<em>Wood-fired · opens 18:30 · 2 min from Piazza III Novembre</em></span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Bike morning from Riva → Torbole on the lakefront cycle path (~5 km flat, dedicated). Swim + watch windsurfers at Spiaggia Torbole, ride back. Lunch in Riva, naps. Afternoon: bus B204 ~30 min up to Lago di Tenno (emerald alpine lake with a small island), swim, then 15-min walk to Canale di Tenno (medieval stone village). Light dinner at a village osteria; bus back.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 10 minimap">
+          <span class="minimap-label">Day 10 · lakefront cycle · alpine lake afternoon</span>
+          <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="200" cy="180" rx="220" ry="35" fill="#2c5466" opacity="0.18"/>
+            <text x="200" y="210" font-family="Cormorant Garamond" font-style="italic" font-size="11" fill="#3d3a35" text-anchor="middle">— Lake Garda, north —</text>
+            <path d="M 60 150 Q 200 130 380 150" stroke="#a64822" stroke-width="1.5" stroke-dasharray="4,3" fill="none" opacity="0.85"/>
+            <g><circle cx="60" cy="150" r="6" fill="#7a3219"/><text x="60" y="135" font-family="DM Mono" font-size="10" text-anchor="middle">RIVA</text></g>
+            <g><circle cx="380" cy="150" r="5" fill="#a64822"/><text x="380" y="135" font-family="DM Mono" font-size="10" text-anchor="middle">Torbole</text><text x="380" y="123" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">5 km bike · windsurfers</text></g>
+            <path d="M 50 145 Q 100 80 165 70" stroke="#a64822" stroke-width="0.9" stroke-dasharray="3,3" fill="none"/>
+            <g><circle cx="170" cy="65" r="6" fill="#4a5d3a"/><text x="170" y="48" font-family="DM Mono" font-size="10" text-anchor="middle">Lago di Tenno</text><text x="170" y="36" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35" text-anchor="middle">bus B204 · 30m</text></g>
+            <g><circle cx="220" cy="55" r="4" fill="#a64822"/><text x="245" y="56" font-family="Cormorant Garamond" font-style="italic" font-size="10" fill="#3d3a35">→ Canale di Tenno</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Bike + double trailer · Riva <span class="arrow">↔</span> Torbole <span class="dur">~5 km flat lakefront</span>
           <span class="dot">·</span>
           Bus Riva <span class="arrow">↔</span> Lago di Tenno <span class="dur">~30m, line B204</span>
         </div>
+        <p class="sched-note">Garda Trentino Bike opens 9:00; pre-book the double trailer 2 days ahead. Line B211 (NOT B204) bus Riva↔Lago di Tenno ~hourly summer, last return ~18:53. Sud opens 18:30 — book ahead.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">8:00</div><div class="body">Walk to <strong>Garda Trentino Bike</strong> — pre-booked bikes + double trailer ready.</div></div>
-          <div class="block"><div class="time">9:00</div><div class="body">Cycle Riva → Torbole on the <strong>lakefront cycle path</strong> — flat, dedicated, lake on one side, cliffs on the other.</div></div>
-          <div class="block"><div class="time">10:00 – 11:30</div><div class="body">Torbole — gelato, swim at <strong>Spiaggia Torbole</strong>, watch the windsurfers (Lake Garda's north end is wind country).</div></div>
+          <div class="block"><div class="time">8:00</div><div class="body">Breakfast on the Riva lakefront. Walk to <a class="place-link" href="https://www.google.com/maps/search/Garda+Trentino+Bike+Riva/" target="_blank" rel="noopener"><strong>Garda Trentino Bike</strong></a> — pre-booked bikes + double trailer. <span class="hours">opens 9:00</span></div></div>
+          <div class="block"><div class="time">9:00</div><div class="body">Cycle Riva → <a class="place-link" href="https://www.google.com/maps/place/Torbole,+Lake+Garda" target="_blank" rel="noopener">Torbole</a> on the lakefront cycle path — flat, dedicated, lake on one side, cliffs on the other.</div></div>
+          <div class="block"><div class="time">10:00 – 11:30</div><div class="body">Torbole — gelato, swim at <a class="place-link" href="https://www.google.com/maps/search/Spiaggia+Torbole/" target="_blank" rel="noopener"><strong>Spiaggia Torbole</strong></a>, watch the windsurfers.</div></div>
           <div class="block"><div class="time">11:30</div><div class="body">Cycle back to Riva.</div></div>
-          <div class="block"><div class="time">12:30</div><div class="body">Lunch at a Riva lakeside spot.</div></div>
+          <div class="block"><div class="time">12:30 – 13:00</div><div class="body"><b>Lunch — the main meal</b> at a Riva lakeside spot. (See meals.)</div></div>
           <div class="block nap"><div class="time">13:30 – 15:30</div><div class="body">Naps.</div></div>
-          <div class="block"><div class="time">15:45</div><div class="body">Bus Riva → <strong>Lago di Tenno</strong> (~30 min, line B204).</div></div>
-          <div class="block"><div class="time">16:15 – 17:30</div><div class="body"><strong>Lago di Tenno</strong> — emerald water at the base of the alps, swim, picnic on the small island.</div></div>
-          <div class="block"><div class="time">17:30</div><div class="body">Walk ~15 min to <strong>Canale di Tenno</strong> — medieval stone village, tiny lanes, panoramic over the lake.</div></div>
-          <div class="block"><div class="time">18:00 – 19:00</div><div class="body">Wander Canale di Tenno. Aperitivo at one of the village osterias.</div></div>
-          <div class="block"><div class="time">19:30</div><div class="body">Bus back to Riva.</div></div>
-          <div class="block"><div class="time">20:00</div><div class="body">Dinner.</div></div>
-          <div class="block"><div class="time">Bonus</div><div class="body"><div class="bonus"><b>If there's energy</b>Ferry to <strong>Limone sul Garda</strong> — west shore lemon groves on the cliffs. ~30 min each way.</div></div></div>
+          <div class="block"><div class="time">15:45</div><div class="body">Bus B211 Riva → <a class="place-link" href="https://www.google.com/maps/place/Lago+di+Tenno" target="_blank" rel="noopener"><strong>Lago di Tenno</strong></a> (~30 min).</div></div>
+          <div class="block"><div class="time">16:15 – 17:00</div><div class="body">Lago di Tenno — emerald water at the base of the alps. Swim, picnic on the small island.</div></div>
+          <div class="block"><div class="time">17:00</div><div class="body">Walk ~15 min to <a class="place-link" href="https://www.google.com/maps/place/Canale+di+Tenno" target="_blank" rel="noopener"><strong>Canale di Tenno</strong></a> — medieval stone village, tiny lanes, panoramic over the lake. Quick wander.</div></div>
+          <div class="block"><div class="time">17:45</div><div class="body">Last B211 bus back to Riva (~18:53 is the late one — check on the day).</div></div>
+          <div class="block"><div class="time">18:30 – 20:00</div><div class="body"><b><a class="place-link" href="https://ristorantesudrivadelgarda.it/" target="_blank" rel="noopener">Ristorante Sud · Pizzeria Napoletana</a></b> · Via Antonio Gazzoletti 15, 2 min from Piazza III Novembre. Wood-fired Neapolitan, the trip's best pizza. Book ahead +39 0464 088079. <span class="hours">opens 18:30 · closed Wed</span></div></div>
+          <div class="block"><div class="time">20:30</div><div class="body">Walk back. Kids in bed.</div></div>
         </div>
 
-        <aside class="restaurant">
-          <span class="label">Dinner pick</span>
-          Whichever harbor restaurant feels most alive — Riva's lakefront lights up at night. Pizzeria, trattoria, gelato.
-        </aside>
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Cappuccino + cornetti at a Riva lakefront café — <a class="place-link" href="https://www.google.com/maps/search/Cafè+Bar+Centrale+Riva+del+Garda/" target="_blank" rel="noopener">Bar Centrale</a> or any on Piazza III Novembre. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · anchor</div>
+            <div class="meal-body"><b><a class="place-link" href="https://www.google.com/maps/search/Antiche+Mura+Riva+del+Garda/" target="_blank" rel="noopener">Antiche Mura</a></b> in the old town — local Trentino classics with strong veg options (strangolapreti, polenta with mushrooms, tortel di patate). Outdoor tables.  <em>Alt:</em> <a class="place-link" href="https://www.google.com/maps/search/Osteria+Le+Servite+Riva/" target="_blank" rel="noopener">Osteria Le Servite</a> for farm-to-table, slightly outside town. <span class="veg">strong veg</span> <span class="meat-ok">lake fish</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · the pizza one</div>
+            <div class="meal-body"><b><a class="place-link" href="https://ristorantesudrivadelgarda.it/" target="_blank" rel="noopener">Ristorante Sud</a></b> · Via Antonio Gazzoletti 15, Riva — proper Neapolitan, wood-fired, soft cornicione. Consensus best pizza in Riva/Torbole. Casual room. <em>Book +39 0464 088079 a few days ahead, request 2 seggioloni.</em> <span class="veg">veg-easy (margherita, marinara, vegetariana)</span></div>
+          </div>
+        </div>
+
+        <div class="swap">
+          <span class="label">Backups + flex</span>
+          <p><b>If kids resist the bike:</b> walk the lakefront path to Torbole (90 min stroller) or take the <a class="place-link" href="https://www.google.com/maps/search/ferry+Riva+to+Limone/" target="_blank" rel="noopener">ferry to Limone sul Garda</a> instead — west-shore lemon groves on cliffs, ~30 min each way.</p>
+          <p><b>Bonus if everyone has energy:</b> ferry to Limone is the iconic "Lake Garda you saw in pictures" — lemon terraces and cliffs. Could swap with Torbole or do in addition (Limone ferries run hourly).</p>
+          <p><b>Rain plan:</b> Riva's <a class="place-link" href="https://www.google.com/maps/place/MAG+Museo+Alto+Garda" target="_blank" rel="noopener">MAG Museo</a> in the lakefront castle has a kids' archaeology section + tower views. Pair with covered-arcade gelato.</p>
+        </div>
 
         <aside class="kids">
           <span class="label">For the kids</span>
@@ -1052,9 +1804,17 @@
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-11">
+  <summary>
+    <span class="s-num">Day 11</span>
+    <span class="s-date">Sun 05 Jul</span>
+    <span class="s-text">One last lake swim, three trains home<small>→ MXP</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 11</div>
         <div class="day-date"><span class="month">Jul</span>05</div>
@@ -1089,6 +1849,28 @@
           </div>
         </div>
 
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Morning</span><span class="flow-what">Last swim at <b>Spiaggia Sabbioni</b> · breakfast lakefront</span></div>
+          <div class="flow-row"><span class="flow-when">Midday</span><span class="flow-what">Bus Riva → Rovereto · Frecciarossa to Milano · Malpensa Express<em>Picnic lunch on the train</em></span></div>
+          <div class="flow-row"><span class="flow-when">Afternoon</span><span class="flow-what">MXP airport hotel by 16:30 · pool if there's energy</span></div>
+          <div class="flow-row"><span class="flow-when">Evening</span><span class="flow-what">Early kids' dinner · in bed by 19:00</span></div>
+        </div>
+
+        <div class="narrative">
+          <p>Return-transit day (Sunday — reduced service). Morning swim at Spiaggia Sabbioni in Riva, breakfast at a lakefront café, pack, check out. Bus Riva → Rovereto, Frecciarossa Rovereto → Milano Centrale (~2.5h, nap), Malpensa Express to MXP. Airport hotel by ~16:30, early kids' dinner, bed by 19:00. Flight at 05:50 the next morning.</p>
+        </div>
+
+        <div class="minimap" aria-label="Day 11 minimap">
+          <span class="minimap-label">Day 11 · last lake swim · three trains home</span>
+          <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
+            <line x1="40" y1="90" x2="560" y2="90" stroke="#a64822" stroke-width="0.9" stroke-dasharray="5,4" opacity="0.7"/>
+            <g><circle cx="40" cy="90" r="5" fill="#a64822"/><text x="40" y="115" font-family="DM Mono" font-size="10" text-anchor="middle">Riva</text><text x="40" y="75" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">07:00 swim</text></g>
+            <g><circle cx="180" cy="90" r="4.5" fill="#a64822"/><text x="180" y="115" font-family="DM Mono" font-size="9.5" text-anchor="middle">Rovereto</text><text x="180" y="75" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">12:30</text></g>
+            <g><circle cx="380" cy="90" r="4.5" fill="#a64822"/><text x="380" y="115" font-family="DM Mono" font-size="9.5" text-anchor="middle">Milano Centrale</text><text x="380" y="75" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~15:00</text></g>
+            <g><circle cx="560" cy="90" r="5" fill="#a64822"/><text x="560" y="115" font-family="DM Mono" font-size="10" text-anchor="middle">MXP hotel</text><text x="560" y="75" font-family="DM Mono" font-size="9" fill="#3d3a35" text-anchor="middle">~16:30</text></g>
+          </svg>
+        </div>
+
         <div class="travel-row mono">
           <span class="label">TRANSPORT</span>
           Bus Riva <span class="arrow">→</span> Rovereto <span class="dur">~50m</span>
@@ -1097,17 +1879,34 @@
           <span class="dot">·</span>
           Malpensa Express <span class="dur">~50m</span>
         </div>
+        <p class="sched-note">SUNDAY SERVICE — bus + train frequencies reduced. Verify last morning Riva→Rovereto bus and book Frecciarossa Rovereto→Centrale 2-3 months ahead.</p>
 
         <div class="blocks">
-          <div class="block"><div class="time">7:00</div><div class="body">Walk to <strong>Spiaggia Sabbioni</strong> — Riva's main lakefront beach.</div></div>
-          <div class="block"><div class="time">7:30 – 10:00</div><div class="body">Last lake swim, breakfast outside at a lakefront café.</div></div>
+          <div class="block"><div class="time">7:00</div><div class="body">Walk to <a class="place-link" href="https://www.google.com/maps/place/Spiaggia+Sabbioni+Riva+del+Garda" target="_blank" rel="noopener"><strong>Spiaggia Sabbioni</strong></a> — Riva's main lakefront beach.</div></div>
+          <div class="block"><div class="time">7:30 – 10:00</div><div class="body">Last lake swim. Breakfast at <a class="place-link" href="https://www.google.com/maps/search/Cafè+lakefront+Riva+del+Garda/" target="_blank" rel="noopener">a lakefront café</a>.</div></div>
           <div class="block"><div class="time">10:30</div><div class="body">Pack final, check out.</div></div>
-          <div class="block"><div class="time">11:30</div><div class="body">Bus Riva → Rovereto (~50 min). <em>Sunday service is reduced — verify last morning bus before booking.</em></div></div>
-          <div class="block nap"><div class="time">12:30 – 15:00</div><div class="body">Train Rovereto → Milano Centrale (~2.5h, deep nap, lunch on the train).</div></div>
+          <div class="block"><div class="time">11:30</div><div class="body">Bus Riva → Rovereto (~50 min).</div></div>
+          <div class="block nap"><div class="time">12:30 – 15:00</div><div class="body">Train Rovereto → Milano Centrale (~2.5h, deep nap, picnic lunch on the train).</div></div>
           <div class="block"><div class="time">15:30</div><div class="body">Malpensa Express Centrale → MXP (~50 min).</div></div>
-          <div class="block"><div class="time">16:30</div><div class="body">MXP airport hotel.</div></div>
+          <div class="block"><div class="time">16:30</div><div class="body">MXP airport hotel — pool if there's energy.</div></div>
           <div class="block"><div class="time">17:30</div><div class="body">Kids' dinner at the hotel.</div></div>
           <div class="block"><div class="time">19:00</div><div class="body">Early bed.</div></div>
+        </div>
+
+        <div class="meals-block">
+          <span class="label">Meals</span>
+          <div class="meal breakfast">
+            <div class="meal-tag">Breakfast</div>
+            <div class="meal-body">Lakefront café after the swim — focaccia + cappuccino + fruit. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal lunch">
+            <div class="meal-tag">Lunch · picnic</div>
+            <div class="meal-body">Pack the picnic in Riva (panificio + small alimentari) and eat on the Frecciarossa during the kids' nap. Trenitalia bar carriage for coffee. <span class="veg">veg-easy</span></div>
+          </div>
+          <div class="meal dinner">
+            <div class="meal-tag">Dinner · hotel</div>
+            <div class="meal-body">Airport-hotel restaurant. Whatever is fastest. Bed.</div>
+          </div>
         </div>
 
         <aside class="kids">
@@ -1116,9 +1915,17 @@
         </aside>
       </div>
     </article>
+</details>
 
 
-    <article class="day reveal">
+    <details class="day-details" id="day-12">
+  <summary>
+    <span class="s-num">Day 12</span>
+    <span class="s-date">Mon 06 Jul</span>
+    <span class="s-text">MXP 05:50 — fly to Lisbon<small>Departure</small></span>
+    <span class="s-toggle"></span>
+  </summary>
+  <article class="day reveal">
       <header class="day-header">
         <div class="day-num">Day 12</div>
         <div class="day-date"><span class="month">Jul</span>06</div>
@@ -1126,6 +1933,12 @@
         <span class="day-tag">Departure</span>
       </header>
       <div class="day-body">
+
+        <div class="day-flow">
+          <div class="flow-row"><span class="flow-when">Pre-dawn</span><span class="flow-what">Hotel shuttle to the terminal by 03:30</span></div>
+          <div class="flow-row"><span class="flow-when">05:50</span><span class="flow-what">Fly to Lisbon</span></div>
+        </div>
+        
         <h3 class="day-headline">MXP 05:50 — fly to Lisbon.</h3>
         <p class="day-intro">At the terminal by 03:30. Home for breakfast.</p>
 
@@ -1137,43 +1950,117 @@
         </div>
       </div>
     </article>
+</details>
 
   </div>
 </section>
 
 
-<section class="prebook reveal">
+<section class="appendix reveal" id="appendix" style="padding:80px 0 30px; border-top: 2px solid var(--rust); background: var(--paper);">
   <div class="container">
-    <div class="section-tag">Section IV · Before You Book</div>
+    <div class="section-tag" style="color:var(--rust);">Appendix</div>
+    <h2 class="section-heading" style="margin-bottom:18px;">Reference. <em>For when we're there.</em></h2>
+    <p class="appendix-intro" style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:17px; color:var(--ink-soft); margin-bottom:20px; max-width:720px;">Pre-trip checklists, transport frequencies, food rhythm, and the route map. Everything Raul doesn't need to read tonight but we'll want on a phone in June.</p>
+
+    <details style="border-bottom: 1px solid var(--line); padding: 14px 0;">
+      <summary style="font-family:'DM Serif Display',serif; font-size:24px; padding:12px 6px; cursor:pointer; list-style:none;"><span style="color:var(--rust); margin-right:14px;">+</span>Route overview · 5 bases on a map</summary>
+      <div style="padding: 20px 28px 22px;">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:17px; color:var(--ink-soft); margin-bottom:18px;">Schematic — not to scale. Each named place inside a day page opens in Google Maps.</p>
+        <div class="overview-map" aria-label="Schematic map of the trip route">
+          <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.18">
+              <path d="M 80 180 L 200 90 L 280 160 L 360 70 L 440 150 L 520 60 L 620 140 L 720 80 L 760 200 L 80 200 Z" fill="#4a5d3a" />
+              <path d="M 80 220 L 150 150 L 240 200 L 320 130 L 420 190 L 500 120 L 600 180 L 700 130 L 760 230 L 80 230 Z" fill="#4a5d3a" opacity="0.6" />
+            </g>
+            <ellipse cx="395" cy="395" rx="28" ry="100" fill="#2c5466" opacity="0.5" />
+            <path d="M 130 415 L 380 430 L 660 200 L 540 100 L 410 295 L 130 415" stroke="#a64822" stroke-width="1.2" fill="none" stroke-dasharray="6,5" opacity="0.85"/>
+            <g transform="translate(130, 415)"><circle r="5" fill="#a64822"/><circle r="11" fill="none" stroke="#a64822" stroke-width="0.6" opacity="0.5"/><text x="-12" y="22" font-family="DM Mono" font-size="10" fill="#1a1a18" text-anchor="end">01 — Malpensa</text></g>
+            <g transform="translate(380, 430)"><circle r="6" fill="#a64822"/><circle r="13" fill="none" stroke="#a64822" stroke-width="0.6" opacity="0.5"/><text x="0" y="28" font-family="DM Mono" font-size="11" fill="#1a1a18" text-anchor="middle">02 — Desenzano</text><text x="0" y="42" font-family="Cormorant Garamond" font-style="italic" font-size="12" fill="#3d3a35" text-anchor="middle">Lake Garda · south</text></g>
+            <g transform="translate(660, 200)"><circle r="6" fill="#a64822"/><circle r="13" fill="none" stroke="#a64822" stroke-width="0.6" opacity="0.5"/><text x="14" y="2" font-family="DM Mono" font-size="11" fill="#1a1a18">03 — Castelrotto</text><text x="14" y="16" font-family="Cormorant Garamond" font-style="italic" font-size="12" fill="#3d3a35">Dolomites</text></g>
+            <g transform="translate(540, 100)"><circle r="9" fill="#7a3219"/><circle r="18" fill="none" stroke="#a64822" stroke-width="0.8" opacity="0.7"/><text x="14" y="-4" font-family="DM Mono" font-size="12" font-weight="500" fill="#1a1a18">04 — MERANO ★</text><text x="14" y="10" font-family="Cormorant Garamond" font-style="italic" font-size="13" fill="#3d3a35">South Tyrol · 4 nights</text></g>
+            <g transform="translate(410, 295)"><circle r="6" fill="#a64822"/><circle r="13" fill="none" stroke="#a64822" stroke-width="0.6" opacity="0.5"/><text x="14" y="0" font-family="DM Mono" font-size="11" fill="#1a1a18">05 — Riva del Garda</text><text x="14" y="14" font-family="Cormorant Garamond" font-style="italic" font-size="12" fill="#3d3a35">Lake Garda · north</text></g>
+            <g transform="translate(740, 50)" opacity="0.5"><path d="M 0 -16 L 4 14 L 0 10 L -4 14 Z" fill="#a64822"/><text x="0" y="30" font-family="DM Mono" font-size="9" fill="#1a1a18" text-anchor="middle">N</text></g>
+          </svg>
+        </div>
+      </div>
+    </details>
+
+    <details style="border-bottom: 1px solid var(--line); padding: 14px 0;">
+      <summary style="font-family:'DM Serif Display',serif; font-size:24px; padding:12px 6px; cursor:pointer; list-style:none;"><span style="color:var(--rust); margin-right:14px;">+</span>Five bases · nights breakdown</summary>
+      <div style="padding: 20px 28px 22px;">
+        <ol class="route-list">
+          <li class="route-row"><span class="num">01 / 05</span><div class="place">Desenzano del Garda<small>Lake Garda south — Sirmione, Parco Natura Viva, rabbit island.</small></div><div class="meta"><strong>2 nights</strong>Jun 25 – 27</div></li>
+          <li class="route-row"><span class="num">02 / 05</span><div class="place">Castelrotto / Siusi<small>Tyrolean village under the Sassolungo · Alpe di Siusi · Lago di Fiè.</small></div><div class="meta"><strong>2 nights</strong>Jun 27 – 29</div></li>
+          <li class="route-row"><span class="num">03 / 05</span><div class="place">Merano ★<small>South Tyrol · the question · gardens, market, orchard bikes, Therme.</small></div><div class="meta"><strong>4 nights</strong>Jun 29 – Jul 3</div></li>
+          <li class="route-row"><span class="num">04 / 05</span><div class="place">Riva del Garda<small>Lake Garda north — cliffs, waterfall, kid bike paths.</small></div><div class="meta"><strong>2 nights</strong>Jul 3 – 5</div></li>
+          <li class="route-row"><span class="num">05 / 05</span><div class="place">Malpensa airport hotel<small>One night before the early flight home.</small></div><div class="meta"><strong>1 night</strong>Jul 5</div></li>
+        </ol>
+      </div>
+    </details>
+  </div>
+</section>
+
+
+<section class="prebook reveal" style="border-top: none; padding-top:20px;">
+  <div class="container">
+    <div class="section-tag">Appendix · Before you book</div>
     <h2 class="section-heading">Things to <em>verify and lock</em> in April 2026.</h2>
 
     <div class="prebook-grid">
       <div class="prebook-col">
         <h3>Pre-book ahead</h3>
         <ul class="checklist">
-          <li><b>Frecciarossa Centrale → Desenzano</b>late evening Jun 25, book 2-3 months ahead via Trenitalia</li>
-          <li><b>Frecciarossa Verona → Bolzano</b>Jun 27 (Saturday afternoon) — book 2-3 months ahead</li>
-          <li><b>Frecciarossa Rovereto → Centrale</b>Jul 5 (Sunday) — book 2-3 months ahead</li>
-          <li><b>Trauttmansdorff Castle Gardens</b>buy timed tickets online to skip the queue</li>
-          <li><b>Sportler Merano bike rental</b>pre-book the double trailer 2-3 days before pickup, "rimorchio doppio per bambini, 2 e 3 anni"</li>
-          <li><b>Garda Trentino Bike rental</b>same, pre-book the trailer</li>
-          <li><b>Uber/NCC Desenzano → Parco Natura Viva</b>pre-book NCC if Uber thin in lake area; ~€50-70 each way with car seats</li>
+          <li><b>Trenord regional Milano Centrale → Desenzano</b>late evening Jun 25 · last train ~22:25 Centrale (NOT Frecciarossa for the late slot). Check trenitalia.com — Jun 25 already in booking window.</li>
+          <li><b>Train Verona PN → Bolzano</b>Sat Jun 27 afternoon · 26 trains/day, mix of Regionale + EuroCity + Frecciarossa. Book early for the fast options.</li>
+          <li><b>Frecciarossa Rovereto → Milano Centrale</b>Sun Jul 5 ~12:30. Check trenitalia.com — Jul 5 likely bookable now or within days (post mid-Jun schedule release).</li>
+          <li><b>Trauttmansdorff Castle Gardens (Wed Jul 1 afternoon)</b>online timed tickets. Family ticket €21 (1 adult + up to 4 kids) — cheaper than separate.</li>
+          <li><b>Sportler / Sportservice Merano bikes (Thu Jul 2)</b>pickup at Palamainardo (Viale Europa, by the bus station) — NOT Galileistrasse. Book double trailer at <a href="https://www.rentandgo.it/" target="_blank" style="color:var(--rust);">rentandgo.it</a> · +39 0473 201500.</li>
+          <li><b>Garda Trentino Bike (Sat Jul 4)</b>email DegasperiRENT or BookYourRent to confirm double-kid trailer availability.</li>
+          <li><b>NCC Desenzano → Parco Natura Viva</b>Uber regular NOT available in Desenzano (only UberBlack). Use taxidesenzano.com or ogarda.com · ~€60–80 each way.</li>
+          <li><b>Therme Meran family ticket</b>book online · note: family discount NOT sold during school holidays (likely affects late June/early July). Budget ~€26 + €26 + €9 + €9 = ~€70 instead.</li>
+          <li><b>Funivia Merano 2000 + Alpin Bob</b>combined ticket cheaper. Alpin Bob: 3yo can ride free with adult · under-4s cannot ride. (One kid only on the coaster.)</li>
         </ul>
       </div>
 
       <div class="prebook-col">
-        <h3>Verify before locking</h3>
+        <h3>Call ahead — restaurants</h3>
         <ul class="checklist">
-          <li><b>Pfefferlechner Keller Tuesday Jun 30</b>verify they're open. Backup: Hofschank Larcherhof or Buschenschank Brunner, both in Lana.</li>
-          <li><b>Tirolo Buschenschank Wed Jul 1 evening</b>pick one (Hochmuth, Egger, Patleidhof) and confirm Wednesday hours.</li>
-          <li><b>ARRIVA bus Desenzano → Porto Torchio</b>Saturday Jun 27 ~8 AM. If sparse, taxi backup ~€20.</li>
-          <li><b>SAD Bus 170 Bolzano → Castelrotto</b>Saturday Jun 27 ~15:00.</li>
-          <li><b>SAD Bus 180 Bolzano → Carezza</b>Monday Jun 29 ~9:00 outbound, ~11:30 return.</li>
-          <li><b>Trentino Trasporti B205 Rovereto ↔ Riva</b>Jul 3 outbound, Jul 5 return (Sunday reduced).</li>
-          <li><b>Trentino Trasporti B204 Riva ↔ Lago di Tenno</b>Saturday Jul 4.</li>
-          <li><b>Last bus Tirolo → Merano</b>Wed Jul 1 evening, around 21:30.</li>
+          <li><b>Götzfried Keller, Lana (Thu Jul 2 lunch)</b>+39 0473 562 772 · book garden table ~12:30 · confirm vegetarian mains beyond cheese platters · arrange free shuttle from Lana center (bike → shuttle → eat → shuttle → bike).</li>
+          <li><b>Soulfood · Pizza Pane Vino, Merano (Tue Jun 30 dinner)</b>WhatsApp +39 328 179 6123 · 18:00 opening · ask for 2 seggioloni.</li>
+          <li><b>Ristorante Sud, Riva (Sat Jul 4 dinner)</b>+39 0464 088079 · 18:30 opening · book a few days ahead, summer Saturday.</li>
+          <li><b>Backup pizzeria Merano</b>357 Trecinquesette · <a href="https://357.plateform.app/welcome" target="_blank" style="color:var(--rust);">357.plateform.app</a> · also Gambero Rosso listed.</li>
+        </ul>
+
+        <h3 style="margin-top: 28px;">Verify before locking</h3>
+        <ul class="checklist">
+          <li><b>ARRIVA bus LN027 Desenzano → Manerba/Porto Torchio</b>Sat Jun 27 ~8:00 (west-side line — LN026 is the wrong route). Backup: taxi ~€20.</li>
+          <li><b>SAD Bus 170 Bolzano → Castelrotto</b>Sat Jun 27 ~15:00. Hourly, 47 min.</li>
+          <li><b>SAD Bus 180 Bolzano → Karersee</b>Mon Jun 29 ~9:10 outbound, ~11:30 return.</li>
+          <li><b>Bus 221 Merano ↔ Tirolo</b>(not 222 — 222 is a chairlift route). Every 30 min 6:30–22:00. Last weekday departure Tirolo → Merano around 22:00 — confirm if Tue evening goes long.</li>
+          <li><b>Trentino Trasporti B205 Rovereto ↔ Riva</b>Jul 3 outbound · Jul 5 return (Sunday reduced — summer 2026 timetable releases after Jun 26, check then for last morning Sunday departure).</li>
+          <li><b>Trentino Trasporti B211 Riva ↔ Lago di Tenno</b>(not B204 — line number corrected). Sat Jul 4 · last evening return ~18:53.</li>
+          <li><b>Garda Trentino summer 2026 bus timetable</b>publishes after Jun 26 — recheck B205 + B211 then.</li>
         </ul>
       </div>
+    </div>
+
+    <div style="margin-top:50px;">
+      <h3 style="font-family:'DM Mono',monospace; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:var(--rust); font-weight:500; margin-bottom:18px;">Transport frequencies — quick reference</h3>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px 30px;" class="freq-grid">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Malpensa Express</b> · every 30 min, 51 min</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Centrale → Desenzano (Frecciarossa)</b> · ~5/day, 1h</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Navigarda Desenzano↔Sirmione</b> · ~hourly summer 7:30–19:00</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Bolzano ↔ Merano regional</b> · every ~30 min, 40m</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">SAD 170 Bolzano↔Castelrotto</b> · ~hourly, 50m</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">SAD 180 Bolzano↔Karersee</b> · ~hourly summer, 50m</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Cabinovia Siusi (Alpe di Siusi)</b> · continuous 8:00–18:30</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Bus 221 Merano↔Tirolo</b> · every 30 min 6:30–22:00</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Funivia Merano 2000</b> · continuous 9:00–18:00</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">Vinschger Bahn Merano↔Lana</b> · every 30 min, 10m</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">B205 Rovereto↔Riva</b> · ~hourly weekdays · Sun reduced</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:16px; line-height:1.5; padding:8px 0; border-bottom:1px dashed var(--line);"><b style="font-family:'DM Mono',monospace; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);">B211 Riva↔Lago di Tenno</b> · ~hourly summer</div>
+      </div>
+      <p class="sched-note" style="margin-top:18px;">All times based on 2024–2025 schedules. Always verify on the operator website 1–2 weeks before travel.</p>
     </div>
   </div>
 </section>
@@ -1181,7 +2068,7 @@
 
 <section class="know reveal">
   <div class="container">
-    <div class="section-tag">Section V · Good to know</div>
+    <div class="section-tag">Appendix · Good to know</div>
     <h2 class="section-heading">A few practical <em>notes.</em></h2>
 
     <div class="know-grid">
@@ -1229,6 +2116,31 @@
         <h3>Bags</h3>
         <p>No checked baggage on the outbound flight (Schengen-internal from Lisbon). One soft duffle per adult plus a kids' bag fits the train luggage racks. <strong>Bolzano station Kipoint storage</strong> for the Carezza detour on Day 5 — ~€5/bag for the morning.</p>
       </div>
+
+      <div class="know-block">
+        <h3>The food rhythm</h3>
+        <p><strong>Lunch is the main meal</strong> — sit-down, vegetarian-friendly, often at a malga (alpine hut), Buschenschank (farm tavern), or traditional stube. <strong>Dinner is light</strong>: pizza al taglio, panini, market picnic, leftovers — eaten on a bench, on a balcony, on the Passer promenade. <strong>One "special dinner"</strong> built into the trip: the Tirolo Buschenschank sunset (Day 8). Most other days dinner is 17:30–19:00.</p>
+      </div>
+
+      <div class="know-block">
+        <h3>Vegetarian in South Tyrol</h3>
+        <p>Strong. Most stube and malgas offer schlutzkrapfen (spinach-ricotta ravioli), spinach + cheese knödel, kasspatzln, polenta with mushrooms, wild herb plates, and apple strudel as defaults. The Asian rotation lives in Merano old town — Sushi Mantra, Yumami, Bali. <strong>Pur Südtirol</strong> on Sandplatz is the best vegetarian-friendly graze + market in town.</p>
+      </div>
+
+      <div class="know-block">
+        <h3>Breakfast logistics</h3>
+        <p>With 6am wake-ups, most cafés don't open until 7:00–7:30. Plan B: <strong>buy cornetti + fruit + yogurt the evening before</strong> from a panificio or supermarket; eat in the room or pack for the platform. South Tyrol bakeries usually open 6:30. The Friday market in Merano (Day 9) is the breakfast morning everyone will remember.</p>
+      </div>
+
+      <div class="know-block">
+        <h3>Markets to anchor on</h3>
+        <p><strong>Friday — Merano</strong> Piazza Prader, 8:00–13:00, the big one. <strong>Daily — Merano</strong> small market by the Wandelhalle. <strong>Sunday — Riva</strong> small lakefront market. <strong>Daily — Bolzano</strong> Piazza delle Erbe, 7:00–19:00. <strong>Saturday — Castelrotto</strong> small farmer's market.</p>
+      </div>
+
+      <div class="know-block">
+        <h3>"Could we live here" cues</h3>
+        <p>Each day there are 2–3 moments built in that approximate daily life rather than tourism: a market shop, a neighborhood walk, a sit-down lunch with a vegetarian default, a bus or bike ride that's how locals move. The question on the back of your hand: <em>does this Tuesday feel like a Tuesday I want?</em></p>
+      </div>
     </div>
   </div>
 </section>
@@ -1252,6 +2164,30 @@
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Open a day-details and scroll to it (used by the glance strip rows)
+  window.openDay = function(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.open = true;
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  };
+
+  // Open every day by default (slide-mode reading) + add a "times + logistics" toggle per day
+  document.querySelectorAll('details.day-details').forEach(d => {
+    d.open = true;
+    const body = d.querySelector('.day-body');
+    if (!body) return;
+    const btn = document.createElement('button');
+    btn.className = 'detail-toggle';
+    btn.type = 'button';
+    btn.textContent = 'times + logistics';
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      d.classList.toggle('show-detail');
+    });
+    body.appendChild(btn);
+  });
 
   function showFallback(img) {
     const place = img.dataset.place || 'Italia';
